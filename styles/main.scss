@@ -2,8 +2,10 @@
 @import './base/reset';
 @import './base/globals';
 
+@import './constants/breakpoints';
 @import './constants/colors';
 @import './constants/typography';
 
 @import './mixins/text-styles';
+@import './mixins/responsive';
 @import './mixins/flexbox';

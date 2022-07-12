@@ -1,0 +1,35 @@
+@mixin text-style-14 {
+  font-size: $font-size-14;
+  line-height: $line-height-14;
+  letter-spacing: $letter-spacing-14;
+}
+
+@mixin text-style-16 {
+  line-height: $line-height-16;
+  font-size: $font-size-16;
+  letter-spacing: $letter-spacing-16;
+}
+
+@mixin text-style-90 {
+  font-size: $font-size-90;
+  line-height: $line-height-90;
+  letter-spacing: $letter-spacing-90;
+}
+
+@mixin text-style($size, $color: false) {
+  @if ($size == 14) {
+    @include text-style-14();
+  }
+
+  @if ($size == 16) {
+    @include text-style-16();
+  }
+
+  @if ($size == 90) {
+    @include text-style-90();
+  }
+
+  @if (type-of($value: $color) == color) {
+    color: $color;
+  }
+}

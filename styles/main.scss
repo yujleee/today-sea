@@ -2,3 +2,7 @@
 @import './base/reset';
 @import './base/colors';
 @import './base/globals';
+
+@import './constants/typography';
+
+@import './mixins/text-styles';

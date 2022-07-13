@@ -1,0 +1,62 @@
+.temperature-card {
+  width: 180px;
+  height: 180px;
+  border-radius: 20px;
+  background-color: $color-white;
+
+  .temp-list {
+    @include flexbox();
+    @include text-style(14);
+    font-weight: 500;
+    position: relative;
+    padding-top: 3vh;
+
+    .temp-title {
+      margin-right: 0.2rem;
+    }
+
+    .temp-title:not(:first-child)::before {
+      content: '';
+
+      display: inline-block;
+      width: 1px;
+      height: 10px;
+      background-color: rgb($color-white, 0.7);
+      margin: 0 1rem;
+    }
+  }
+
+  .current-temp {
+    @include text-style(90);
+    @include flexbox();
+    padding-top: 6vh;
+  }
+
+  &.red {
+    background-color: $color-red;
+  }
+
+  &.orange {
+    background-color: $color-orange;
+  }
+
+  &.yellow {
+    background-color: $color-yellow;
+  }
+
+  &.green {
+    background-color: $color-green;
+  }
+
+  &.light-blue {
+    background-color: $color-light-blue;
+  }
+
+  &.blue {
+    background-color: $color-blue;
+  }
+
+  &.purple {
+    background-color: $color-purple;
+  }
+}

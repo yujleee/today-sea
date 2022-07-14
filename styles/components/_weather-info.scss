@@ -1,12 +1,14 @@
 .weather-info {
-  width: 200px;
   position: relative;
+  left: 50%;
+  width: 200px;
   height: 50vh;
+  transform: translateX(-50%);
 
   .weather-img {
     position: absolute;
     left: 50%;
-    bottom: 7vh;
+    bottom: 4vh;
     width: 180px;
     height: auto;
     margin: 0 auto;

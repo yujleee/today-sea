@@ -1,12 +1,12 @@
 .info-area {
   @include flexbox;
-  width: 100%;
+  padding: 0 8vh;
 
   .info-table {
     @include text-style(14);
     @include flexbox(start);
     flex-wrap: wrap;
-    width: 250px;
+    width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
 
@@ -18,7 +18,7 @@
 
     th {
       margin-right: 1vw;
-      padding-left: 3vw;
+      padding-left: 1vw;
       color: $color-gray-400;
       font-weight: 400;
       text-align: left;
@@ -28,7 +28,7 @@
       width: 50px;
       font-weight: 700;
       color: $color-gray-500;
-      margin-right: 1vw;
+      margin-right: 2vw;
     }
   }
 }

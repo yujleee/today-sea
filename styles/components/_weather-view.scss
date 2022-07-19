@@ -1,0 +1,17 @@
+.weather-view {
+  width: 100%;
+
+  .area-info {
+    @include text-style(16, $color-gray-500);
+    margin-bottom: 5vh;
+  }
+
+  .card-wrap {
+    min-width: 100vw;
+    @include flexbox(between);
+
+    .weather-info:nth-child(1) {
+      margin: 0 5rem;
+    }
+  }
+}

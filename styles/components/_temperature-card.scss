@@ -5,7 +5,7 @@
   background-color: $color-white;
 
   .temp-list {
-    @include flexbox();
+    @include flexbox;
     @include text-style(14);
     font-weight: 500;
     position: relative;
@@ -28,7 +28,7 @@
 
   .current-temp {
     @include text-style(90);
-    @include flexbox();
+    @include flexbox;
     padding-top: 6vh;
   }
 

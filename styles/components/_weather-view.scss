@@ -3,15 +3,12 @@
 
   .area-info {
     @include text-style(16, $color-gray-500);
-    margin-bottom: 5vh;
+    @include flexbox;
+    flex-direction: column;
+    margin: 3vh 0 5vh;
   }
 
   .card-wrap {
-    min-width: 100vw;
-    @include flexbox(between);
-
-    .weather-info:nth-child(1) {
-      margin: 0 5rem;
-    }
+    width: 200px;
   }
 }

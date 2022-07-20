@@ -2,12 +2,13 @@
 /* eslint-disable no-unused-vars */
 
 const weatherSlider = tns({
-  navAsThumbnails: true,
+  loop: false,
   arrowKeys: true,
   mouseDrag: true,
   preventScrollOnTouch: true,
   container: '.card-wrap',
   controls: false,
-  autoplayHoverPause: true,
   autoplayButtonOutput: false,
+  center: true,
+  gutter: -110,
 });

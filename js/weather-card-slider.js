@@ -10,5 +10,5 @@ const weatherSlider = tns({
   controls: false,
   autoplayButtonOutput: false,
   center: true,
-  gutter: -110,
+  gutter: -90,
 });

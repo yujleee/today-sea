@@ -3,8 +3,6 @@
 
   .info-table {
     @include text-style(14);
-    @include flexbox(start);
-    flex-wrap: wrap;
     border-collapse: collapse;
     table-layout: fixed;
 

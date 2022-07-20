@@ -1,15 +1,17 @@
 .temperature-card {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
   border-radius: 20px;
   background-color: $color-white;
 
   .temp-list {
     @include flexbox;
-    @include text-style(14);
+    @include text-style;
+    font-size: 18px;
     font-weight: 500;
     position: relative;
-    padding-top: 3vh;
+    padding: 3rem 0 5rem;
 
     .temp-title {
       margin-right: 0.2rem;
@@ -17,7 +19,6 @@
 
     .temp-title:not(:first-child)::before {
       content: '';
-
       display: inline-block;
       width: 1px;
       height: 10px;
@@ -27,9 +28,9 @@
   }
 
   .current-temp {
-    @include text-style(90);
+    @include text-style;
     @include flexbox;
-    padding-top: 6vh;
+    font-size: 12rem;
   }
 
   &.red {

@@ -1,6 +1,5 @@
 .weather-view {
   width: 100%;
-  padding: 4vh 0;
 
   .area-info {
     @include text-style(16, $color-gray-500);
@@ -10,6 +9,6 @@
   }
 
   .card-wrap {
-    margin-left: 4.2rem;
+    margin-left: 2rem;
   }
 }

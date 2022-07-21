@@ -1,28 +1,55 @@
-.info-area {
+.info-list {
+  @include text-style(16);
   @include flexbox;
+  margin: 0 2rem;
+  border-top: 1px solid rgba($color: $color-white, $alpha: 0.4);
+  text-align: left;
+  flex-wrap: wrap;
+  padding: 1rem 0 3rem;
 
-  .info-table {
-    @include text-style(14);
-    border-collapse: collapse;
-    table-layout: fixed;
+  dt,
+  dd {
+    padding: 0.5rem 0;
+    line-height: 1.7;
+  }
 
-    tr {
-      vertical-align: center;
-      height: 34px;
-      border-bottom: 1px solid $color-gray-100;
+  dt {
+    @include flexbox;
+    color: $color-white;
+    font-weight: 400;
+    margin: 0 1rem;
+  }
+
+  dd {
+    margin-right: auto;
+    flex-shrink: 1;
+    font-weight: 700;
+    color: $color-white;
+  }
+
+  @include responsive(T) {
+    font-size: 20px;
+
+    dt,
+    dd {
+      flex-shrink: 1;
     }
 
-    th {
-      padding-left: 2rem;
-      color: $color-gray-400;
-      font-weight: 400;
-      text-align: left;
+    dt:first-child {
+      margin-left: auto;
     }
 
-    td {
-      width: 50px;
-      font-weight: 700;
-      color: $color-gray-500;
+    dd {
+      margin-right: auto;
     }
+  }
+
+  @include responsive(D) {
+    margin-top: 10rem;
+    padding: 3rem 0;
+  }
+
+  dd {
+    flex-shrink: 1;
   }
 }

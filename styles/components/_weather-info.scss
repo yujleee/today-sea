@@ -1,16 +1,12 @@
 .weather-info {
   @include flexbox;
-  position: relative;
-  height: auto;
   padding-bottom: 20vh;
 
   .weather-img {
-    position: absolute;
-    left: 50%;
-    top: 17rem;
-    width: 180px;
+    width: 72px;
     height: auto;
-    transform: translateX(-50%);
+    margin: 0 auto;
+    padding-top: 3rem;
 
     figure img {
       display: block;

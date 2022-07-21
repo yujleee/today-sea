@@ -2,6 +2,8 @@
   @include flexbox(between);
   width: 100%;
   padding: 20px 30px;
+  overflow-x: hidden;
+  margin: 0 auto;
 
   .logo {
     color: $color-gray-700;

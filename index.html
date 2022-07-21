@@ -12,95 +12,86 @@
     <title>Weather TMI</title>
   </head>
   <body>
-    <header class="gnb">
-      <button class="btn-menu" type="button">
-        <img src="./assets/ic_menu.png" alt="메뉴버튼" aria-label="메뉴 열기" />
-      </button>
-      <h1 class="logo"><a href="/">weatherTMI</a></h1>
-    </header>
-    <main class="weather-view">
-      <div class="area-info">
-        <h3 class="area-name">마포구 상암동</h3>
-        <p class="current-time">2022-08-11 12:00</p>
-      </div>
+    <div class="container">
+      <header class="gnb">
+        <button class="btn-menu" type="button">
+          <img src="./assets/ic_menu.png" alt="메뉴버튼" aria-label="메뉴 열기" />
+        </button>
+      </header>
+      <main class="weather-view">
+        <div class="area-info">
+          <h3 class="area-name">마포구 상암동</h3>
+          <p class="current-time">2022-08-11 12:00</p>
+        </div>
 
-      <div class="card-wrap">
-        <div class="weather-info">
-          <article class="temperature-card red">
-            <dl class="temp-list">
-              <dt class="temp-title">아침</dt>
-              <dd class="temp-data">35°</dd>
-              <dt class="temp-title">저녁</dt>
-              <dd class="temp-data">25°</dd>
-            </dl>
-            <h1 class="visually-hidden">현재 체감 기온</h1>
-            <h2 class="current-temp">33°</h2>
-          </article>
-          <div class="weather-img">
-            <figure>
-              <img src="./assets/images/img-sun.png" alt="" />
-              <figcaption>맑음</figcaption>
-            </figure>
+        <div class="card-wrap">
+          <div class="weather-info">
+            <article class="temperature-card red">
+              <dl class="temp-list">
+                <dt class="temp-title">아침</dt>
+                <dd class="temp-data">35°</dd>
+                <dt class="temp-title">저녁</dt>
+                <dd class="temp-data">25°</dd>
+              </dl>
+              <h1 class="visually-hidden">현재 체감 기온</h1>
+              <h2 class="current-temp">33°</h2>
+              <table class="info-table">
+                <tr>
+                  <th>최고 기온</th>
+                  <td>30°</td>
+                  <th>최저 기온</th>
+                  <td>22°</td>
+                </tr>
+                <tr>
+                  <th>자외선 지수</th>
+                  <td>8.0</td>
+                  <th>현재 습도</th>
+                  <td>60%</td>
+                </tr>
+              </table>
+            </article>
+          </div>
+          <div class="weather-info">
+            <div class="weather-img">
+              <figure>
+                <img src="./assets/images/img-sun.png" alt="" />
+                <figcaption class="visually-hidden">맑음</figcaption>
+              </figure>
+            </div>
+            <article class="temperature-card orange">
+              <dl class="temp-list">
+                <dt class="temp-title">아침</dt>
+                <dd class="temp-data">35°</dd>
+                <dt class="temp-title">저녁</dt>
+                <dd class="temp-data">25°</dd>
+              </dl>
+              <h1 class="visually-hidden">현재 체감 기온</h1>
+              <h2 class="current-temp">33°</h2>
+            </article>
+          </div>
+          <div class="weather-info">
+            <div class="weather-img">
+              <figure>
+                <img src="./assets/images/img-sun.png" />
+                <figcaption class="visually-hidden">맑음</figcaption>
+              </figure>
+            </div>
+            <article class="temperature-card blue">
+              <dl class="temp-list">
+                <dt class="temp-title">아침</dt>
+                <dd class="temp-data">35°</dd>
+                <dt class="temp-title">저녁</dt>
+                <dd class="temp-data">25°</dd>
+              </dl>
+              <h1 class="visually-hidden">현재 체감 기온</h1>
+              <h2 class="current-temp">33°</h2>
+            </article>
           </div>
         </div>
-        <div class="weather-info">
-          <article class="temperature-card orange">
-            <dl class="temp-list">
-              <dt class="temp-title">아침</dt>
-              <dd class="temp-data">35°</dd>
-              <dt class="temp-title">저녁</dt>
-              <dd class="temp-data">25°</dd>
-            </dl>
-            <h1 class="visually-hidden">현재 체감 기온</h1>
-            <h2 class="current-temp">33°</h2>
-          </article>
-          <div class="weather-img">
-            <figure>
-              <img src="./assets/images/img-sun.png" alt="" />
-              <figcaption>맑음</figcaption>
-            </figure>
-          </div>
-        </div>
-        <div class="weather-info">
-          <article class="temperature-card blue">
-            <dl class="temp-list">
-              <dt class="temp-title">아침</dt>
-              <dd class="temp-data">35°</dd>
-              <dt class="temp-title">저녁</dt>
-              <dd class="temp-data">25°</dd>
-            </dl>
-            <h1 class="visually-hidden">현재 체감 기온</h1>
-            <h2 class="current-temp">33°</h2>
-          </article>
-          <div class="weather-img">
-            <figure>
-              <img src="./assets/images/img-sun.png" alt="" />
-              <figcaption>맑음</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
+      </main>
+    </div>
 
-      <article class="info-area">
-        <h1 class="visually-hidden">현재 날씨 정보</h1>
-        <table class="info-table">
-          <tr>
-            <th>최고 기온</th>
-            <td>30°</td>
-            <th>최저 기온</th>
-            <td>22°</td>
-          </tr>
-          <tr>
-            <th>자외선 지수</th>
-            <td>8.0</td>
-            <th>현재 습도</th>
-            <td>60%</td>
-          </tr>
-        </table>
-      </article>
-    </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-    <!-- NOTE: prior to v2.2.1 tiny-slider.js need to be in <body> -->
     <script type="module" src="js/weather-card-slider.js"></script>
   </body>
 </html>

@@ -1,0 +1,12 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+
+  @include responsive(T) {
+    max-width: 720px;
+  }
+
+  @include responsive(D) {
+    max-width: 90vw;
+  }
+}

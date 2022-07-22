@@ -1,25 +1,27 @@
-const API_KEY = 'c40261d80ade97363b1cfe766d7fdbaa';
+import render from './render.js';
 
-const render = (pos) => {
-  console.log(pos.main.temp);
+const API_KEY = 'e70e0a26b718dcd848479ffc22d2ecc1';
+
+const App = () => {
+  const loadWeather = async (lat, lon) => {
+    await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`)
+      .then((response) => response.json())
+      .then((data) => render(data))
+      .catch((error) => console.error(error));
+  };
+
+  const successPosition = (pos) => {
+    const { latitude, longitude } = pos.coords;
+    loadWeather(latitude, longitude);
+  };
+
+  const failPosition = (e) => {
+    console.error('Geolocation 오류', e);
+  };
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(successPosition, failPosition);
+  }
 };
 
-const loadWeather = async (lat, lon) => {
-  await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
-    .then((response) => response.json())
-    .then((data) => render(data))
-    .catch((error) => console.error(error));
-};
-
-const successPosition = (pos) => {
-  const { latitude, longitude } = pos.coords;
-  loadWeather(latitude, longitude);
-};
-
-const failPosition = (e) => {
-  console.error('Geolocation 오류', e);
-};
-
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(successPosition, failPosition);
-}
+App();

@@ -28,12 +28,22 @@ const weatherImg = [
 ];
 
 const render = (pos) => {
-  const currentTime = new Date().toLocaleString();
-  document.querySelector('.current-time').innerText = `${currentTime}`;
-  today.querySelector('.current-temp').innerText = `${pos.main.feels_like.toFixed(1)}°`;
-  today.querySelector('.info-list .temp-max').innerText = `${pos.main.temp_max.toFixed(1)}°`;
-  today.querySelector('.info-list .temp-min').innerText = `${pos.main.temp_min.toFixed(1)}°`;
-  today.querySelector('.info-list .humidity').innerText = `${pos.main.humidity.toFixed(1)}°`;
+  //   console.log(pos);
+  const getData = (data) => {
+    const result = {};
+    data.item.forEach((it) => {
+      result[it.category] = it.fcstValue;
+    });
+    return result;
+  };
+
+  const currentInfo = getData(pos.response.body.items);
+  //   console.log(currentInfo);
+
+  today.querySelector('.current-temp').innerText = `${currentInfo.TMP}°`;
+  //   today.querySelector('.info-list .temp-max').innerText = `${pos.main.temp_max.toFixed(1)}°`;
+  //   today.querySelector('.info-list .temp-min').innerText = `${pos.main.temp_min.toFixed(1)}°`;
+  //   today.querySelector('.info-list .humidity').innerText = `${pos.main.humidity.toFixed(1)}°`;
 };
 
 export default render;

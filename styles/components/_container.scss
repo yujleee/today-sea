@@ -1,12 +1,17 @@
 .container {
   width: 100%;
-  margin: 0 auto;
 
-  @include responsive(T) {
+  .main {
+    @include flexbox;
+    flex-direction: column;
     max-width: 720px;
-  }
+    padding: 20px;
+    margin: 0 auto;
 
-  @include responsive(D) {
-    max-width: 90vw;
+    .title {
+      margin: 5rem 0;
+      font-size: 4rem;
+      color: $color-gray-700;
+    }
   }
 }

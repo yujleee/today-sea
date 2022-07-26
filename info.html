@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>해수욕장 날씨 정보 | 오늘의 바다</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="gnb">
+        <button class="btn-menu" type="button">
+          <i class="ic-chevron" aria-label="뒤로 가기"></i>
+        </button>
+      </header>
+      <main class="main">
+        <div class="beach-info">
+          <h2 class="beach-name">을왕리 해수욕장</h2>
+          <div class="weather-wrapper">
+            <div class="weather-img">
+              <figure>
+                <img src="./assets/images/clear.png" alt="" />
+                <figcaption class="visually-hidden">맑음</figcaption>
+              </figure>
+            </div>
+            <h3 class="current-temp">33°</h3>
+          </div>
+        </div>
+        <article class="beach-info-wrapper">
+          <h1 class="visually-hidden">온도 일몰 일출 정보</h1>
+          <dl class="info-list">
+            <dt>습도</dt>
+            <dd class="humidty">30°</dd>
+            <dt>수온</dt>
+            <dd class="water-temp">22°</dd>
+            <dt>일출</dt>
+            <dd class="sunrise">05:10</dd>
+            <dt>일몰</dt>
+            <dd class="sunset">20:00</dd>
+          </dl>
+        </article>
+        <article class="beach-info-wrapper">
+          <h1 class="visually-hidden">파도 바람 정보</h1>
+          <dl class="info-list">
+            <dt>밀물</dt>
+            <dd class="tide">20:00</dd>
+            <dt>파도</dt>
+            <dd class="wave">4</dd>
+            <dt>풍속</dt>
+            <dd class="water-spped">22°</dd>
+            <dt>풍향</dt>
+            <dd class="wind-direction">20:00</dd>
+          </dl>
+        </article>
+      </main>
+    </div>
+
+    <script type="module" src="./js/api.js"></script>
+    <script type="module" src="./js/render.js"></script>
+  </body>
+</html>

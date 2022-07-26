@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" />
     <link rel="stylesheet" href="style.css" />
-    <title>Weather TMI</title>
+    <title>오늘의 바다</title>
   </head>
   <body>
     <div class="container">
@@ -19,85 +19,47 @@
         </button>
       </header>
       <main class="weather-view">
-        <div class="area-info">
-          <h3 class="area-name">마포구 상암동</h3>
-          <p class="current-time">2022-08-11 12:00</p>
-        </div>
-
-        <div class="card-wrap">
-          <div class="today weather-info">
-            <article class="temperature-card red">
-              <div class="weather-img">
-                <figure>
-                  <img src="./assets/images/clear.png" alt="" />
-                  <figcaption class="visually-hidden">맑음</figcaption>
-                </figure>
-              </div>
-              <h3 class="current-temp-title">현재 체감 기온</h3>
-              <h2 class="current-temp">33°</h2>
-              <dl class="info-list">
-                <dt>최고 기온</dt>
-                <dd class="temp-max">30°</dd>
-                <dt>최저 기온</dt>
-                <dd class="temp-min">22°</dd>
-                <dt>자외선 지수</dt>
-                <dd class="uvi">8.0</dd>
-                <dt>현재 습도</dt>
-                <dd class="humidity">60%</dd>
-              </dl>
-            </article>
-          </div>
-          <div class="tomorrow weather-info">
-            <article class="temperature-card green">
-              <div class="weather-img">
-                <figure>
-                  <img src="./assets/images/cloud.png" alt="" />
-                  <figcaption class="visually-hidden">구름</figcaption>
-                </figure>
-              </div>
-              <h3 class="current-temp-title">현재 체감 기온</h3>
-              <h2 class="current-temp">12°</h2>
-              <dl class="info-list">
-                <dt>최고 기온</dt>
-                <dd>14°</dd>
-                <dt>최저 기온</dt>
-                <dd>10°</dd>
-                <dt>자외선 지수</dt>
-                <dd>5.0</dd>
-                <dt>현재 습도</dt>
-                <dd>40%</dd>
-              </dl>
-            </article>
-          </div>
-          <div class="day-after-tomorrow weather-info">
-            <article class="temperature-card blue">
-              <div class="weather-img">
-                <figure>
-                  <img src="./assets/images/snow.png" alt="" />
-                  <figcaption class="visually-hidden">눈</figcaption>
-                </figure>
-              </div>
-              <h3 class="current-temp-title">현재 체감 기온</h3>
-              <h2 class="current-temp">-1°</h2>
-
-              <dl class="info-list">
-                <dt>최고 기온</dt>
-                <dd>2°</dd>
-                <dt>최저 기온</dt>
-                <dd>-4°</dd>
-                <dt>자외선 지수</dt>
-                <dd>3.0</dd>
-                <dt>현재 습도</dt>
-                <dd>30%</dd>
-              </dl>
-            </article>
+        <div class="beach-info">
+          <h2 class="beach-name">을왕리 해수욕장</h2>
+          <div class="weather-wrapper">
+            <div class="weather-img">
+              <figure>
+                <img src="./assets/images/clear.png" alt="" />
+                <figcaption class="visually-hidden">맑음</figcaption>
+              </figure>
+            </div>
+            <h3 class="current-temp">33°</h3>
           </div>
         </div>
+        <article class="beach-info-wrapper">
+          <h1 class="visually-hidden">해수욕장 정보</h1>
+          <dl class="info-list">
+            <dt>습도</dt>
+            <dd class="humidty">30°</dd>
+            <dt>tndhs</dt>
+            <dd class="water-temp">22°</dd>
+            <dt>일출</dt>
+            <dd class="sunrise">05:10</dd>
+            <dt>일몰</dt>
+            <dd class="sunset">20:00</dd>
+          </dl>
+        </article>
+        <article class="beach-info-wrapper">
+          <h1 class="visually-hidden">해수욕장 정보</h1>
+          <dl class="info-list">
+            <dt>밀물</dt>
+            <dd class="">30°</dd>
+            <dt>tndhs</dt>
+            <dd class="water-temp">22°</dd>
+            <dt>일출</dt>
+            <dd class="sunrise">05:10</dd>
+            <dt>일몰</dt>
+            <dd class="sunset">20:00</dd>
+          </dl>
+        </article>
       </main>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-    <script type="module" src="js/weather-card-slider.js"></script>
     <script type="module" src="./js/api.js"></script>
     <script type="module" src="./js/render.js"></script>
   </body>

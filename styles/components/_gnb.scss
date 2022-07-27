@@ -1,12 +1,17 @@
 .gnb {
   @include flexbox(between);
   width: 100%;
-  padding: 20px 30px;
+  padding: 0 1rem;
+  margin: 0 auto 2rem;
   overflow-x: hidden;
-  margin: 0 auto;
 
-  .logo {
-    color: $color-gray-700;
-    font-style: italic;
+  .btn-menu {
+    padding: 1rem 0;
+    cursor: pointer;
+
+    .ic-chevron {
+      font-size: 2.6rem;
+      color: $color-gray-400;
+    }
   }
 }

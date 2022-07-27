@@ -1,11 +1,10 @@
 .info-list {
-  @include text-style(16);
-  @include flexbox;
-  margin: 0 2rem;
-  border-top: 1px solid rgba($color: $color-white, $alpha: 0.4);
+  @include text-style(18);
+  z-index: 999;
+  display: grid;
+  padding: 1rem 0;
   text-align: left;
-  flex-wrap: wrap;
-  padding: 1rem 0 3rem;
+  grid-template-columns: repeat(4, 1fr);
 
   dt,
   dd {
@@ -15,41 +14,23 @@
 
   dt {
     @include flexbox;
-    color: $color-white;
-    font-weight: 400;
     margin: 0 1rem;
+    font-weight: 400;
+    color: $color-gray-400;
   }
 
   dd {
     margin-right: auto;
-    flex-shrink: 1;
     font-weight: 700;
-    color: $color-white;
+    color: $color-gray-700;
+
+    .unit {
+      font-weight: 400;
+      color: $color-gray-400;
+    }
   }
 
   @include responsive(T) {
-    font-size: 20px;
-
-    dt,
-    dd {
-      flex-shrink: 1;
-    }
-
-    dt:first-child {
-      margin-left: auto;
-    }
-
-    dd {
-      margin-right: auto;
-    }
-  }
-
-  @include responsive(D) {
-    margin-top: 10rem;
-    padding: 3rem 0;
-  }
-
-  dd {
-    flex-shrink: 1;
+    grid-template-columns: repeat(2, 1fr);
   }
 }

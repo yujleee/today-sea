@@ -1,0 +1,24 @@
+.beach-info-wrapper {
+  @include flexbox;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .fa-solid {
+    font-size: 28px;
+    color: $color-gray-300;
+    text-align: center;
+    transition: color ease-in-out 300ms;
+  }
+
+  @include responsive(T) {
+    flex-direction: column;
+    margin-bottom: 3rem;
+
+    &:hover {
+      .fa-solid {
+        color: $color-blue;
+      }
+    }
+  }
+}

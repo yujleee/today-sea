@@ -131,11 +131,15 @@
               name="beachName"
               maxlength="30"
               placeholder="해수욕장 찾기"
+              autocomplete="off"
             />
             <button type="submit" class="search-btn">
               <i class="fa-solid fa-magnifying-glass ic-search" aria-label="검색하기"></i>
             </button>
           </form>
+          <div class="search-result">
+            <ul class="result-list"></ul>
+          </div>
         </div>
       </main>
       <div class="wave-wrapper">
@@ -160,5 +164,6 @@
       </div>
     </div>
     <script src="https://kit.fontawesome.com/0962038fb3.js" crossorigin="anonymous"></script>
+    <script type="module" src="./js/search.js"></script>
   </body>
 </html>

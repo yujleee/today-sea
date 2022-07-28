@@ -25,11 +25,12 @@ fetchData();
 
 const handleSearch = () => {
   const word = searchInput.value;
+  let beachList = [];
   if (word !== '') {
     const recommandName = beachNames.filter((name) => name.toLowerCase().startsWith(word));
-    const beachList = recommandName.map((item) => `<li>${item}</li>`).join('');
-    resultList.innerHTML = beachList;
+    beachList = recommandName.map((item) => `<li>${item}</li>`).join('');
   }
+  resultList.innerHTML = beachList;
 };
 
 searchInput.addEventListener('keyup', (e) => {

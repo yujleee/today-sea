@@ -5,13 +5,14 @@
 
   .main {
     @include flexbox;
-    z-index: 999;
+    position: relative;
+    z-index: 99;
     flex-direction: column;
     max-width: 720px;
     margin: 0 auto;
 
     .title {
-      margin: 4rem 0;
+      margin-bottom: 4rem;
       font-size: 4.4rem;
       font-weight: 900;
       letter-spacing: -0.03em;

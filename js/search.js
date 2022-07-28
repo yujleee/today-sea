@@ -1,5 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 const searchInput = document.querySelector('.input-search');
+const resultList = document.querySelector('.result-list');
 
 let beachInfo = {};
 const beachNames = [];
@@ -26,11 +27,14 @@ const handleSearch = () => {
   const word = searchInput.value;
   if (word !== '') {
     const recommandName = beachNames.filter((name) => name.toLowerCase().startsWith(word));
+    const beachList = recommandName.map((item) => `<li>${item}</li>`).join('');
+    resultList.innerHTML = beachList;
   }
 };
 
 searchInput.addEventListener('keyup', (e) => {
   if (e.key !== 'backspace') {
+    resultList.parentNode.classList.add('is-active');
     handleSearch();
   }
 });

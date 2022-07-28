@@ -6,9 +6,16 @@
     height: 50px;
     padding: 0.8rem 1.6rem;
     font-size: 1.4rem;
+    font-weight: 700;
+    background-color: rgba($color-white, 0.7);
     border: 1px solid $color-gray-300;
     border-radius: 25px;
-    background-color: rgba($color-white, 0.7);
+
+    &.active {
+      background-color: rgba($color-white, 1);
+      border: none;
+      border-radius: 5px;
+    }
 
     &::placeholder {
       color: $color-gray-300;
@@ -25,6 +32,38 @@
     .ic-search {
       font-size: 2.6rem;
       color: $color-blue;
+    }
+  }
+
+  .search-result {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    display: none;
+    width: 300px;
+    padding: 10px;
+    background-color: rgba($color-white, 0.7);
+    border-radius: 5px;
+
+    &.is-active {
+      display: block;
+    }
+
+    .result-list {
+      @include text-style(16, $color-gray-400);
+      padding-left: 0.8rem;
+      font-weight: 700;
+
+      li {
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: all 300ms ease-in-out;
+
+        &:hover {
+          color: $color-gray-700;
+          background-color: rgba($color-blue, 0.3);
+        }
+      }
     }
   }
 }

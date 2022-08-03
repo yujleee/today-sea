@@ -6,7 +6,6 @@ const beachInfoTop = document.querySelector('.beach-info-top');
 const infoArea = document.querySelector('.info-area');
 
 export const renderFcst = (pos) => {
-  console.log(pos);
   const getData = (data) => {
     const result = {};
     data.item.forEach((it) => {
@@ -16,10 +15,9 @@ export const renderFcst = (pos) => {
   };
 
   const weather = getData(pos.response.body.items);
-  console.log(weather);
-  console.log(selectImg(weather.SKY, weather.PTY));
 
   beachInfoTop.querySelector('.beach-name').innerText = beachInfo.name;
+  beachInfoTop.querySelector('.weather-img img').setAttribute('src', selectImg(weather.SKY, weather.PTY));
   beachInfoTop.querySelector('.current-temp').innerText = `${weather.TMP}°`;
 
   infoArea.querySelector('.humidty').innerText = `${weather.REH}%`;

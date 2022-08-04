@@ -5,7 +5,7 @@ const beachInfo = JSON.parse(localStorage.getItem('beachInfo'));
 const beachInfoTop = document.querySelector('.beach-info-top');
 const infoArea = document.querySelector('.info-area');
 
-export const renderFcst = (pos) => {
+export const renderFcstInfo = (pos) => {
   const getData = (data) => {
     const result = {};
     data.item.forEach((it) => {

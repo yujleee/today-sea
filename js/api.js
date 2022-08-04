@@ -1,4 +1,4 @@
-import { renderFcst } from './renderFcst.js';
+import { renderFcstInfo } from './renderFcstInfo.js';
 import { renderSunInfo } from './renderSunInfo.js';
 
 const URL = 'https://apis.data.go.kr/1360000/BeachInfoservice';
@@ -14,7 +14,7 @@ const getBaseTime = (currentTime) => {
   return baseTime < 10 ? `0${baseTime}00` : `${baseTime}00`;
 };
 
-const currentTime = async () => {
+const getCurrentTime = async () => {
   const today = new Date();
   const year = today.getFullYear();
   const month = today.toLocaleString('ko-KO', { month: '2-digit' }).slice(0, 2);
@@ -23,12 +23,13 @@ const currentTime = async () => {
   now.time = getBaseTime(today.getHours());
   return now;
 };
-const getForecast = async () => {
+
+const getForecastInfo = async () => {
   await fetch(
     `${URL}/getVilageFcstBeach?serviceKey=${API_KEY}&dataType=JSON&base_date=${now.date}&base_time=${now.time}&beach_num=${beachNumber}&numOfRows=20`
   )
     .then((response) => response.json())
-    .then((data) => renderFcst(data))
+    .then((data) => renderFcstInfo(data))
     .catch((error) => console.error('예보 없음', error));
 };
 
@@ -42,8 +43,8 @@ const getSunInfo = async () => {
 };
 
 const App = async () => {
-  await currentTime();
-  await getForecast();
+  await getCurrentTime();
+  await getForecastInfo();
   await getSunInfo();
 };
 

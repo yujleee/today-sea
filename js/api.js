@@ -7,13 +7,20 @@ const beachInfo = JSON.parse(localStorage.getItem('beachInfo'));
 const beachNumber = beachInfo.num;
 const now = {};
 
+const baseTimeList = [2, 5, 8, 11, 14, 17, 20, 23];
+
+const getBaseTime = (currentTime) => {
+  const baseTime = baseTimeList.find((it) => currentTime < it);
+  return baseTime < 10 ? `0${baseTime}00` : `${baseTime}00`;
+};
+
 const currentTime = async () => {
   const today = new Date();
   const year = today.getFullYear();
   const month = today.toLocaleString('ko-KO', { month: '2-digit' }).slice(0, 2);
   const date = today.toLocaleString('ko-KO', { day: '2-digit' }).slice(0, 2);
   now.date = `${year}${month}${date}`;
-  now.time = `${today.getHours() + 1}00`;
+  now.time = getBaseTime(today.getHours());
   return now;
 };
 const getForecast = async () => {
@@ -22,7 +29,7 @@ const getForecast = async () => {
   )
     .then((response) => response.json())
     .then((data) => renderFcst(data))
-    .catch((error) => console.error(error));
+    .catch((error) => console.error('예보 없음', error));
 };
 
 const getSunInfo = async () => {

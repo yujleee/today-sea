@@ -11,7 +11,7 @@ const now = {};
 const baseTimeList = [2, 5, 8, 11, 14, 17, 20, 23];
 
 const getBaseTime = (currentTime) => {
-  const baseTime = baseTimeList.find((it) => currentTime < it);
+  const baseTime = baseTimeList.find((it) => currentTime <= it);
   return baseTime < 10 ? `0${baseTime}00` : `${baseTime}00`;
 };
 

@@ -2,9 +2,10 @@
   @include flexbox;
   flex-shrink: 1;
   flex-wrap: wrap;
-  width: 100%;
+  justify-content: flex-start;
 
   .fa-solid {
+    margin-right: 1rem;
     font-size: 28px;
     color: $color-gray-300;
     text-align: center;
@@ -14,6 +15,10 @@
   @include responsive(T) {
     flex-direction: column;
     margin-bottom: 3rem;
+
+    .fa-solid {
+      margin-right: 0;
+    }
 
     &:hover {
       .fa-solid {

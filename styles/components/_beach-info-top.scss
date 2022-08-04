@@ -44,13 +44,15 @@
   }
 
   @include responsive(T) {
+    margin-bottom: 2.3rem;
+
     .ic-beach {
       font-size: 24px;
     }
 
     .title.beach-name {
-      margin: 2rem 0;
-      font-size: 4rem;
+      margin: 1rem 0;
+      font-size: 3.2rem;
     }
 
     .weather-wrapper {

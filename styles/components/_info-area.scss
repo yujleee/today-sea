@@ -1,8 +1,8 @@
 .info-area {
   display: grid;
-  width: 100%;
 
   @include responsive(T) {
+    width: 80%;
     grid-template-columns: repeat(2, 1fr);
   }
 

@@ -1,5 +1,6 @@
 import { renderFcstInfo } from './renderFcstInfo.js';
 import { renderSunInfo } from './renderSunInfo.js';
+import { renderTideInfo } from './renderTideInfo.js';
 
 const URL = 'https://apis.data.go.kr/1360000/BeachInfoservice';
 const API_KEY = 'JgOTEFegmT85gM1vQ7XNalEJFJb0gusFB26pkZkBameKaU3B5WlTltcyt6xWvGR8aNvLvw7Jw6gqnQSiMm6KgQ%3D%3D';
@@ -42,10 +43,20 @@ const getSunInfo = async () => {
     .catch((error) => console.error(error));
 };
 
+const getTideInfo = async () => {
+  await fetch(
+    `${URL}/getTideInfoBeach?serviceKey=${API_KEY}&dataType=JSON&base_date=${now.date}&beach_num=${beachNumber}`
+  )
+    .then((response) => response.json())
+    .then((data) => renderTideInfo(data))
+    .catch((error) => console.error(error));
+};
+
 const App = async () => {
   await getCurrentTime();
   await getForecastInfo();
   await getSunInfo();
+  await getTideInfo();
 };
 
 App();

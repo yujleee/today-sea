@@ -9,7 +9,17 @@ const BASE_TIME = [2, 5, 8, 11, 14, 17, 20, 23];
 
 const beachInfo = store.getLocalStorage('beachInfo');
 const beachNumber = beachInfo.num;
+
 const now = {};
+
+const savePayload = (a, b) => {
+  const payload = {
+    date: a,
+    time: b,
+  };
+
+  return payload;
+};
 
 const getBaseTime = (currentTime) => {
   const baseTime = BASE_TIME.find((it) => currentTime <= it);
@@ -55,6 +65,7 @@ const getTideInfo = async () => {
 
 const App = async () => {
   await getCurrentTime();
+  store.setLocalStorage('currentTime', savePayload(now.date, now.time));
   await getForecastInfo();
   await getSunInfo();
   await getTideInfo();

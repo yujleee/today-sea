@@ -1,7 +1,8 @@
 /* eslint-disable no-restricted-syntax */
+import { store } from './store/store.js';
 import { selectImg } from './weatherImg.js';
 
-const beachInfo = JSON.parse(localStorage.getItem('beachInfo'));
+const beachInfo = store.getLocalStorage('beachInfo');
 
 const beachInfoTop = document.querySelector('.beach-info-top');
 const infoArea = document.querySelector('.info-area');

@@ -1,4 +1,6 @@
 /* eslint-disable no-restricted-syntax */
+import { store } from './store/store.js';
+
 const searchInput = document.querySelector('.input-search');
 const searchForm = searchInput.parentNode;
 const resultList = document.querySelector('.result-list');
@@ -49,7 +51,8 @@ const submitBeach = (e) => {
     num: beachNumber,
     name: beachName,
   };
-  localStorage.setItem('beachInfo', JSON.stringify(payload));
+
+  store.setLocalStorage('beachInfo', payload);
   searchForm.submit();
 };
 

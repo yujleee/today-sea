@@ -1,10 +1,11 @@
 import { renderFcstInfo } from './renderFcstInfo.js';
 import { renderSunInfo } from './renderSunInfo.js';
 import { renderTideInfo } from './renderTideInfo.js';
+import { store } from './store/store.js';
 
 const URL = 'https://apis.data.go.kr/1360000/BeachInfoservice';
 const API_KEY = 'JgOTEFegmT85gM1vQ7XNalEJFJb0gusFB26pkZkBameKaU3B5WlTltcyt6xWvGR8aNvLvw7Jw6gqnQSiMm6KgQ%3D%3D';
-const beachInfo = JSON.parse(localStorage.getItem('beachInfo'));
+const beachInfo = store.getLocalStorage('beachInfo');
 const beachNumber = beachInfo.num;
 const now = {};
 

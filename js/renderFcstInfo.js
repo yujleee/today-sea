@@ -2,7 +2,7 @@
 import { store } from './store/store.js';
 import { selectImg } from './weatherImg.js';
 
-const beachInfo = store.getLocalStorage('beachInfo');
+const beachName = store.getLocalStorage('beachInfo').name;
 
 const beachInfoTop = document.querySelector('.beach-info-top');
 const infoArea = document.querySelector('.info-area');
@@ -40,7 +40,7 @@ export const renderFcstInfo = (pos) => {
 
   const weather = getData(pos.response.body.items);
 
-  beachInfoTop.querySelector('.beach-name').innerText = beachInfo.name;
+  beachInfoTop.querySelector('.beach-name').innerText = beachName;
   beachInfoTop.querySelector('.weather-img img').setAttribute('src', selectImg(weather.SKY, weather.PTY));
   beachInfoTop.querySelector('.current-temp').innerText = `${weather.TMP}°`;
 

@@ -7,9 +7,7 @@ const URL = 'https://apis.data.go.kr/1360000/BeachInfoservice';
 const API_KEY = 'JgOTEFegmT85gM1vQ7XNalEJFJb0gusFB26pkZkBameKaU3B5WlTltcyt6xWvGR8aNvLvw7Jw6gqnQSiMm6KgQ%3D%3D';
 const BASE_TIME = [2, 5, 8, 11, 14, 17, 20, 23];
 
-const beachInfo = store.getLocalStorage('beachInfo');
-const beachNumber = beachInfo.num;
-
+const beachNumber = store.getLocalStorage('beachInfo').num;
 const now = {};
 
 const savePayload = (a, b) => {

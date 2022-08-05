@@ -5,14 +5,14 @@ import { store } from './store/store.js';
 
 const URL = 'https://apis.data.go.kr/1360000/BeachInfoservice';
 const API_KEY = 'JgOTEFegmT85gM1vQ7XNalEJFJb0gusFB26pkZkBameKaU3B5WlTltcyt6xWvGR8aNvLvw7Jw6gqnQSiMm6KgQ%3D%3D';
+const BASE_TIME = [2, 5, 8, 11, 14, 17, 20, 23];
+
 const beachInfo = store.getLocalStorage('beachInfo');
 const beachNumber = beachInfo.num;
 const now = {};
 
-const baseTimeList = [2, 5, 8, 11, 14, 17, 20, 23];
-
 const getBaseTime = (currentTime) => {
-  const baseTime = baseTimeList.find((it) => currentTime <= it);
+  const baseTime = BASE_TIME.find((it) => currentTime <= it);
   return baseTime < 10 ? `0${baseTime}00` : `${baseTime}00`;
 };
 

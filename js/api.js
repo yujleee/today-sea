@@ -34,8 +34,8 @@ const getCurrentTime = async () => {
   return now;
 };
 
-const getForecastInfo = async () => {
-  await fetch(
+const getForecastInfo = () => {
+  fetch(
     `${URL}/getVilageFcstBeach?serviceKey=${API_KEY}&dataType=JSON&base_date=${now.date}&base_time=${now.time}&beach_num=${beachNumber}&numOfRows=20`
   )
     .then((response) => response.json())
@@ -43,19 +43,15 @@ const getForecastInfo = async () => {
     .catch((error) => console.error('예보 없음', error));
 };
 
-const getSunInfo = async () => {
-  await fetch(
-    `${URL}/getSunInfoBeach?serviceKey=${API_KEY}&dataType=JSON&base_date=${now.date}&beach_num=${beachNumber}`
-  )
+const getSunInfo = () => {
+  fetch(`${URL}/getSunInfoBeach?serviceKey=${API_KEY}&dataType=JSON&base_date=${now.date}&beach_num=${beachNumber}`)
     .then((response) => response.json())
     .then((data) => renderSunInfo(data))
     .catch((error) => console.error(error));
 };
 
-const getTideInfo = async () => {
-  await fetch(
-    `${URL}/getTideInfoBeach?serviceKey=${API_KEY}&dataType=JSON&base_date=${now.date}&beach_num=${beachNumber}`
-  )
+const getTideInfo = () => {
+  fetch(`${URL}/getTideInfoBeach?serviceKey=${API_KEY}&dataType=JSON&base_date=${now.date}&beach_num=${beachNumber}`)
     .then((response) => response.json())
     .then((data) => renderTideInfo(data))
     .catch((error) => console.error(error));
@@ -64,9 +60,9 @@ const getTideInfo = async () => {
 const App = async () => {
   await getCurrentTime();
   store.setLocalStorage('currentTime', savePayload(now.date, now.time));
-  await getForecastInfo();
-  await getSunInfo();
-  await getTideInfo();
+  getForecastInfo();
+  getSunInfo();
+  getTideInfo();
 };
 
 App();

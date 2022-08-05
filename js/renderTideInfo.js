@@ -8,7 +8,7 @@ export const renderTideInfo = (pos) => {
     const values = Object.values(data);
     const result = {};
     values[0].forEach((it) => {
-      result[it.tiType] = it.tiTime;
+      result[it.tiType] = it.tiTime !== '' ? it.tiTime : '정보없음';
     });
     return result;
   };

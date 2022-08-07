@@ -38,11 +38,10 @@ const handleSearch = () => {
 
 const submitBeach = (e) => {
   const beachName = e.target.innerText;
-  console.log(beachName);
-  let beachNumber = 0;
+  let beachNumber = 1;
   for (const [idx, beach] of Object.entries(beachInfo)) {
     if (beach.name === beachName) {
-      beachNumber = idx;
+      beachNumber = beach['beach-num'];
     }
   }
 

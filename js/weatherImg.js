@@ -1,3 +1,5 @@
+import { store } from './store/store.js';
+
 const weatherImg = [
   {
     img_id: 1,
@@ -29,10 +31,23 @@ const weatherImg = [
     name: 'snow',
     img: '../assets/images/snow.png',
   },
+  {
+    img_id: 5,
+    name: 'night',
+    img: '../assets/images/night.png',
+  },
 ];
+
+const currentTime = Number(store.getLocalStorage('currentTime').time);
 
 export const selectImg = (sky, pty) => {
   let src = '';
+
+  if (currentTime >= 2000) {
+    const imgList = weatherImg.find((it) => it.name === 'night');
+    return imgList.img;
+  }
+
   if (Number(pty) === 0) {
     const imgList = weatherImg.find((it) => it.img_id === Number(sky));
     src = imgList.img;

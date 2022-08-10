@@ -17,16 +17,3 @@ $flex-map: (
   display: flex;
   justify-content: _get-flex-value($jc);
 }
-
-@mixin inline-flexbox($jc: center, $ai: center) {
-  align-items: _get-flex-value($ai);
-  display: inline-flex;
-  justify-content: _get-flex-value($jc);
-}
-
-@mixin column-flexbox($jc: center, $ai: center) {
-  align-items: _get-flex-value($ai);
-  display: flex;
-  flex-direction: column;
-  justify-content: _get-flex-value($jc);
-}

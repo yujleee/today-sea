@@ -59,7 +59,8 @@
         cursor: pointer;
         transition: all 300ms ease-in-out;
 
-        &:hover {
+        &:hover,
+        &.is-active {
           color: $color-gray-700;
           background-color: rgba($color-blue, 0.3);
         }

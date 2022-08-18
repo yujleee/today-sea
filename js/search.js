@@ -8,7 +8,7 @@ function Search() {
 
   let beachInfo = {};
   const beachNames = [];
-  this.searchCount = 0;
+  this.searchCount = -1;
   this.searchMaxCount = 0;
 
   const fetchData = async () => {
@@ -41,7 +41,7 @@ function Search() {
   };
 
   const submitBeach = (e) => {
-    const beachName = e.target.innerText;
+    const beachName = searchInput.value.length === 1 ? e.target.innerText : searchInput.value;
     let beachNumber = 1;
     for (const [idx, beach] of Object.entries(beachInfo)) {
       if (beach.name === beachName) {
@@ -50,35 +50,39 @@ function Search() {
     }
 
     searchInput.value = beachName;
+
     const payload = {
       num: beachNumber,
       name: beachName,
     };
 
     store.setLocalStorage('beachInfo', payload);
-    //   searchForm.submit();
+    searchForm.submit();
   };
 
   const handleSearchResult = (e) => {
-    console.log(resultList.childElementCount);
-    const li = resultList.childNodes[this.searchCount];
-    if (this.searchCount > this.searchMaxCount || this.searchCount < 0) {
-      this.searchCount = 0;
-    } else {
-      switch (e.key) {
-        case 'ArrowUp':
-          this.searchCount -= 1;
-          console.log('up', this.searchCount);
-          break;
-        case 'ArrowDown':
-          this.searchCount += 1;
-          console.log('down', this.searchCount);
-          break;
-        default:
-          break;
-      }
+    if (this.searchCount >= this.searchMaxCount) {
+      this.searchCount = -1;
+    } else if (this.searchCount > this.searchMaxCount || this.searchCount < 0) {
+      this.searchCount = this.searchMaxCount;
     }
 
+    const li = resultList.childNodes[this.searchCount];
+    switch (e.key) {
+      case 'ArrowUp':
+        this.searchCount -= 1;
+
+        break;
+      case 'ArrowDown':
+        this.searchCount += 1;
+        break;
+      case 'Enter':
+        searchInput.value = li.innerText;
+        submitBeach();
+        break;
+      default:
+        break;
+    }
     li.classList.toggle('is-active');
   };
 
@@ -89,6 +93,13 @@ function Search() {
     }
 
     if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+      handleSearchResult(e);
+    }
+  });
+
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
       handleSearchResult(e);
     }
   });

@@ -10,7 +10,7 @@
 
   .title.beach-name {
     padding: 0 2rem;
-    margin-top: 1rem;
+    margin: 1rem 0 0.2rem;
     font-size: 3.2rem;
     line-height: 1.3;
     color: $color-gray-700;
@@ -18,13 +18,19 @@
     word-break: keep-all;
   }
 
+  .base-time {
+    @include text-style(16);
+    margin-bottom: 2.5rem;
+    color: $color-gray-400;
+  }
+
   .weather-wrapper {
     @include flexbox;
     width: 34rem;
     height: 130px;
-    border-radius: 5px;
     padding: 0 2rem;
     background-color: $color-blue;
+    border-radius: 5px;
 
     .weather-img {
       width: 72px;
@@ -51,8 +57,12 @@
     }
 
     .title.beach-name {
-      margin: 1rem 0;
+      margin: 1rem 0 0;
       font-size: 3.2rem;
+    }
+
+    .base-time {
+      margin-bottom: 0.5rem;
     }
 
     .weather-wrapper {

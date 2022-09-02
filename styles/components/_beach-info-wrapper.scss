@@ -10,6 +10,10 @@
     color: $color-gray-300;
     text-align: center;
     transition: color ease-in-out 300ms;
+
+    &.fa-water {
+      font-size: 26px;
+    }
   }
 
   @include responsive(T) {

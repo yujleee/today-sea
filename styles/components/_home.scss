@@ -1,0 +1,14 @@
+.title-wrapper {
+  @include flexbox;
+  flex-direction: column;
+  margin-bottom: 4rem;
+
+  .title {
+    margin-bottom: 1rem;
+  }
+}
+
+.desc-text {
+  @include text-style(16);
+  color: $color-gray-400;
+}

@@ -1,0 +1,36 @@
+.main.error {
+  margin: 50% auto auto;
+
+  .fa-triangle-exclamation {
+    font-size: 10rem;
+    color: $color-blue;
+    margin-bottom: 2rem;
+  }
+
+  .error {
+    &-title {
+      font-size: 3rem;
+      margin-bottom: 0.7rem;
+    }
+
+    &-text {
+      @include text-style(16);
+      margin-bottom: 4rem;
+    }
+  }
+
+  .back-btn {
+    @include text-style(16);
+    width: 20rem;
+    height: 4rem;
+    font-weight: 600;
+    color: $color-white;
+    background-color: $color-gray-700;
+    border-radius: 10px;
+    transition: background-color ease-in-out 300ms;
+
+    &:hover {
+      background-color: $color-blue;
+    }
+  }
+}

@@ -40,21 +40,30 @@ const getForecastInfo = () => {
   )
     .then((response) => response.json())
     .then((data) => renderFcstInfo(data))
-    .catch((error) => console.error('예보 없음', error));
+    .catch((error) => {
+      console.error(error);
+      window.location.replace('./error.html');
+    });
 };
 
 const getSunInfo = () => {
   fetch(`${URL}/getSunInfoBeach?serviceKey=${API_KEY}&dataType=JSON&base_date=${now.date}&beach_num=${beachNumber}`)
     .then((response) => response.json())
     .then((data) => renderSunInfo(data))
-    .catch((error) => console.error(error));
+    .catch((error) => {
+      console.error(error);
+      window.location.replace('./error.html');
+    });
 };
 
 const getTideInfo = () => {
   fetch(`${URL}/getTideInfoBeach?serviceKey=${API_KEY}&dataType=JSON&base_date=${now.date}&beach_num=${beachNumber}`)
     .then((response) => response.json())
     .then((data) => renderTideInfo(data))
-    .catch((error) => console.error(error));
+    .catch((error) => {
+      console.error(error);
+      window.location.replace('./error.html');
+    });
 };
 
 const App = async () => {

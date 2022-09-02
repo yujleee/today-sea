@@ -515,6 +515,23 @@ svg {
 .wave-wrapper.info {
   opacity: 0.5;
 }
+.wave-wrapper .desc-text.bottom {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  z-index: 99;
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+@media screen and (min-width: 720px) {
+  .wave-wrapper .desc-text.bottom {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    letter-spacing: -0.02em;
+  }
+}
 
 .waves {
   position: relative;
@@ -558,7 +575,6 @@ svg {
     transform: translate3d(85px, 0, 0);
   }
 }
-/*Shrinking for mobile*/
 .container {
   width: 100%;
   height: 100vh;
@@ -575,11 +591,28 @@ svg {
   margin: 0 auto;
 }
 .container .main .title {
-  margin-bottom: 4rem;
   font-size: 4.4rem;
   font-weight: 900;
   letter-spacing: -0.03em;
   color: rgb(35, 35, 35);
+}
+
+.title-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 4rem;
+}
+.title-wrapper .title {
+  margin-bottom: 1rem;
+}
+
+.desc-text {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: -0.02em;
+  color: rgb(119, 119, 119);
 }
 
 .gnb {
@@ -658,7 +691,7 @@ svg {
   cursor: pointer;
   transition: all 300ms ease-in-out;
 }
-.search-wrapper .search-result .result-list li:hover {
+.search-wrapper .search-result .result-list li:hover, .search-wrapper .search-result .result-list li.is-active {
   color: rgb(35, 35, 35);
   background-color: rgba(62, 122, 212, 0.3);
 }
@@ -691,12 +724,19 @@ svg {
 }
 .beach-info-top .title.beach-name {
   padding: 0 2rem;
-  margin-top: 1rem;
+  margin: 1rem 0 0.2rem;
   font-size: 3.2rem;
   line-height: 1.3;
   color: rgb(35, 35, 35);
   text-align: center;
   word-break: keep-all;
+}
+.beach-info-top .base-time {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 2.5rem;
+  color: rgb(119, 119, 119);
 }
 .beach-info-top .weather-wrapper {
   align-items: center;
@@ -704,9 +744,9 @@ svg {
   justify-content: center;
   width: 34rem;
   height: 130px;
-  border-radius: 5px;
   padding: 0 2rem;
   background-color: rgb(62, 122, 212);
+  border-radius: 5px;
 }
 .beach-info-top .weather-wrapper .weather-img {
   width: 72px;
@@ -729,8 +769,11 @@ svg {
     font-size: 24px;
   }
   .beach-info-top .title.beach-name {
-    margin: 1rem 0;
+    margin: 1rem 0 0;
     font-size: 3.2rem;
+  }
+  .beach-info-top .base-time {
+    margin-bottom: 0.5rem;
   }
   .beach-info-top .weather-wrapper {
     width: 42rem;
@@ -756,6 +799,9 @@ svg {
   color: rgb(204, 204, 204);
   text-align: center;
   transition: color ease-in-out 300ms;
+}
+.beach-info-wrapper .fa-solid.fa-water {
+  font-size: 26px;
 }
 @media screen and (min-width: 720px) {
   .beach-info-wrapper {
@@ -806,6 +852,40 @@ svg {
   .info-list {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.main.error {
+  margin: 50% auto auto;
+}
+.main.error .fa-triangle-exclamation {
+  font-size: 10rem;
+  color: rgb(62, 122, 212);
+  margin-bottom: 2rem;
+}
+.main.error .error-title {
+  font-size: 3rem;
+  margin-bottom: 0.7rem;
+}
+.main.error .error-text {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 4rem;
+}
+.main.error .back-btn {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: -0.02em;
+  width: 20rem;
+  height: 4rem;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  background-color: rgb(35, 35, 35);
+  border-radius: 10px;
+  transition: background-color ease-in-out 300ms;
+}
+.main.error .back-btn:hover {
+  background-color: rgb(62, 122, 212);
 }
 
 /*# sourceMappingURL=style.css.map */

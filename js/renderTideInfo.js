@@ -3,12 +3,18 @@ import { store } from './store/store.js';
 const infoArea = document.querySelector('.info-area');
 const currentTime = store.getLocalStorage('currentTime').time;
 
+const tideType = ['ET1', 'FT1', 'ET2', 'FT2'];
+
 export const renderTideInfo = (pos) => {
   const getData = (data) => {
     const values = Object.values(data);
     const result = {};
     values[0].forEach((it) => {
-      result[it.tiType] = it.tiTime !== '' ? it.tiTime : '정보없음';
+      if (it.tiType === '-') {
+        // eslint-disable-next-line no-return-assign
+        tideType.forEach((type) => (result[type] = '정보없음'));
+      }
+      result[it.tiType] = it.tiTime;
     });
     return result;
   };

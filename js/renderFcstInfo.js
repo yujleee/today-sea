@@ -3,6 +3,7 @@ import { store } from './store/store.js';
 import { selectImg } from './weatherImg.js';
 
 const beachName = store.getLocalStorage('beachInfo').name;
+const baseTime = store.getLocalStorage('currentTime').time;
 
 const beachInfoTop = document.querySelector('.beach-info-top');
 const infoArea = document.querySelector('.info-area');
@@ -39,8 +40,8 @@ export const renderFcstInfo = (pos) => {
   };
 
   const weather = getData(pos.response.body.items);
-
   beachInfoTop.querySelector('.beach-name').innerText = beachName;
+  beachInfoTop.querySelector('.base-time').innerText = `오늘 ${baseTime.slice(0, 2)}시 기준`;
   beachInfoTop.querySelector('.weather-img img').setAttribute('src', selectImg(weather.SKY, weather.PTY));
   beachInfoTop.querySelector('.current-temp').innerText = `${weather.TMP}°`;
 

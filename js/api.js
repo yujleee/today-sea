@@ -19,6 +19,19 @@ const savePayload = (a, b) => {
   return payload;
 };
 
+const startLoading = () => {
+  document.querySelector('.loading').classList.remove('before-load');
+};
+
+const removeLoading = () => {
+  document.querySelector('.loading').addEventListener('transitionend', (e) => {
+    console.log(e.currentTarget);
+    console.log('loading end');
+
+    document.body.removeChild(e.currentTarget);
+  });
+};
+
 const getBaseTime = (currentTime) => {
   const baseTime = BASE_TIME.find((it) => currentTime <= it);
   return baseTime < 10 ? `0${baseTime}00` : `${baseTime}00`;
@@ -39,7 +52,10 @@ const getForecastInfo = () => {
     `${URL}/getVilageFcstBeach?serviceKey=${API_KEY}&dataType=JSON&base_date=${now.date}&base_time=${now.time}&beach_num=${beachNumber}&numOfRows=20`
   )
     .then((response) => response.json())
-    .then((data) => renderFcstInfo(data))
+    .then((data) => {
+      startLoading();
+      renderFcstInfo(data);
+    })
     .catch((error) => {
       console.error(error);
       window.location.replace('./error.html');
@@ -59,7 +75,10 @@ const getSunInfo = () => {
 const getTideInfo = () => {
   fetch(`${URL}/getTideInfoBeach?serviceKey=${API_KEY}&dataType=JSON&base_date=${now.date}&beach_num=${beachNumber}`)
     .then((response) => response.json())
-    .then((data) => renderTideInfo(data))
+    .then((data) => {
+      renderTideInfo(data);
+      removeLoading();
+    })
     .catch((error) => {
       console.error(error);
       window.location.replace('./error.html');

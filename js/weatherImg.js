@@ -54,9 +54,8 @@ export const selectImg = (sky, pty) => {
   }
 
   if (Number(pty) >= 1) {
-    const imgList = weatherImg.find((it) => it.img_id + 1 === Number(pty));
+    const imgList = weatherImg.find((it) => it.img_id === Number(pty) + 1);
     src = imgList.img;
   }
-
   return src;
 };

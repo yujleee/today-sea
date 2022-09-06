@@ -855,7 +855,14 @@ svg {
 }
 
 .main.error {
-  margin: 50% auto auto;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 .main.error .fa-triangle-exclamation {
   font-size: 10rem;
@@ -886,6 +893,55 @@ svg {
 }
 .main.error .back-btn:hover {
   background-color: rgb(62, 122, 212);
+}
+
+.loading {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgb(255, 255, 255);
+  opacity: 0;
+  transition: 0.5s;
+}
+.loading.before-load {
+  opacity: 1;
+}
+
+.loading-circle {
+  width: 5.4rem;
+  height: 5.4rem;
+  animation: loading-spin 3s infinite;
+}
+.loading-circle circle {
+  stroke: rgb(62, 122, 212);
+  stroke-width: 4;
+  stroke-dasharray: 157;
+  stroke-dashoffset: -157;
+  fill: transparent;
+  animation: loading-circle-ani 3s infinite;
+}
+
+@keyframes loading-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loading-circle-ani {
+  0% {
+    stroke-dashoffset: 157;
+  }
+  75% {
+    stroke-dashoffset: -147;
+  }
+  100% {
+    stroke-dashoffset: -157;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

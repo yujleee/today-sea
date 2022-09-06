@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/lodash@4.16.6"></script>
+    <title>오늘의 바다</title>
+  <script defer src="app.bundle.js"></script></head>
+  <body>
+    <div class="container">
+      <div class="clouds-wrapper">
+        <div class="clouds">
+          <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            width="762px"
+            height="331px"
+            viewBox="0 0 762 331"
+            enable-background="new 0 0 762 331"
+            xml:space="preserve"
+            class="cloud big front slowest"
+          >
+            <path
+              d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                    c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                    C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                    S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"
+            />
+          </svg>
+          <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            width="762px"
+            height="331px"
+            viewBox="0 0 762 331"
+            enable-background="new 0 0 762 331"
+            xml:space="preserve"
+            class="cloud distant smaller"
+          >
+            <path
+              d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                    c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                    C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                    S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"
+            />
+          </svg>
+
+          <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            width="762px"
+            height="331px"
+            viewBox="0 0 762 331"
+            enable-background="new 0 0 762 331"
+            xml:space="preserve"
+            class="cloud small slow"
+          >
+            <path
+              d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                    c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                    C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                    S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"
+            />
+          </svg>
+
+          <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            width="762px"
+            height="331px"
+            viewBox="0 0 762 331"
+            enable-background="new 0 0 762 331"
+            xml:space="preserve"
+            class="cloud distant super-slow massive"
+          >
+            <path
+              d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                    c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                    C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                    S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"
+            />
+          </svg>
+
+          <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            width="762px"
+            height="331px"
+            viewBox="0 0 762 331"
+            enable-background="new 0 0 762 331"
+            xml:space="preserve"
+            class="cloud slower"
+          >
+            <path
+              d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                    c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                    C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                    S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <main class="main">
+        <div class="title-wrapper">
+          <h1 class="title">오늘의 바다</h1>
+          <p class="desc-text">해수욕장을 검색해 일기 예보를 확인해보세요.</p>
+        </div>
+        <div class="search-wrapper">
+          <form action="/info.html" role="search" method="get">
+            <input
+              type="text"
+              class="input-search"
+              title="검색어 입력"
+              name="beachName"
+              maxlength="30"
+              placeholder="해수욕장 찾기"
+              autocomplete="off"
+            />
+            <button type="submit" class="search-btn">
+              <i class="fa-solid fa-magnifying-glass ic-search" aria-label="검색하기"></i>
+            </button>
+          </form>
+          <div class="search-result">
+            <ul class="result-list"></ul>
+          </div>
+        </div>
+      </main>
+      <div class="wave-wrapper">
+        <p class="desc-text bottom">이 사이트는 공공 데이터의 Open API를 이용하고 있습니다.</p>
+        <svg
+          class="waves"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28"
+          preserveAspectRatio="none"
+          shape-rendering="auto"
+        >
+          <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(62, 122, 212,0.7)" />
+            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(62, 122, 212,0.5)" />
+            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(62, 122, 212,0.3)" />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(62, 122, 212)" />
+          </g>
+        </svg>
+      </div>
+    </div>
+    <script src="https://kit.fontawesome.com/0962038fb3.js" crossorigin="anonymous"></script>
+    <script type="module" src="./js/search.js"></script>
+  </body>
+</html>

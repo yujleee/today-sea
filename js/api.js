@@ -90,4 +90,6 @@ const App = async () => {
   getTideInfo();
 };
 
-App();
+window.addEventListener('load', () => {
+  App();
+});

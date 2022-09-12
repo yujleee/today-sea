@@ -25,9 +25,6 @@ const startLoading = () => {
 
 const removeLoading = () => {
   document.querySelector('.loading').addEventListener('transitionend', (e) => {
-    console.log(e.currentTarget);
-    console.log('loading end');
-
     document.body.removeChild(e.currentTarget);
   });
 };

@@ -1,1 +1,105 @@
-<!doctype html><html lang="ko"><head><meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png"/><link rel="manifest" href="favicon/site.webmanifest"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="style.css"/><title>오늘의 바다 | 해수욕장 날씨 예보</title><script defer="defer" src="main.app.js"></script></head><body><div class="loading before-load"><svg class="loading-circle" viewbox="0 0 54 54"><circle cx="50%" cy="50%" r="25"></circle></svg></div><div class="container"><header class="gnb"><button class="btn-menu" type="button"><a href="./index.html"><i class="fa-solid fa-chevron-left ic-chevron" aria-label="뒤로가기"></i></a></button></header><main class="main"><div class="beach-info-top"><i class="fa-solid fa-umbrella-beach ic-beach" aria-disabled></i><h1 class="title beach-name"></h1><p class="base-time"></p><div class="weather-wrapper"><div class="weather-img"><img src="./assets/images/clear.png" alt="맑음"/></div><h3 class="current-temp">33°</h3></div></div><section class="info-area"><article class="beach-info-wrapper"><h1 class="visually-hidden">온도 습도 정보</h1><i class="fa-solid fa-person-swimming"></i><dl class="info-list"><dt>수온</dt><dd class="water-temp">22°</dd><dt>습도</dt><dd class="humidty">30%</dd></dl></article><article class="beach-info-wrapper"><h1 class="visually-hidden">일몰 일출 정보</h1><i class="fa-solid fa-sun"></i><dl class="info-list"><dt>일출</dt><dd class="sunrise">05:10</dd><dt>일몰</dt><dd class="sunset">20:00</dd></dl></article><article class="beach-info-wrapper"><h1 class="visually-hidden">파도 바람 정보</h1><i class="fa-solid fa-water" aria-disabled></i><dl class="info-list"><dt>간조</dt><dd class="ebb-tide">02:00</dd><dt>만조</dt><dd class="flood-tide">07:00</dd><dt>파도</dt><dd class="wave">4</dd></dl></article><article class="beach-info-wrapper"><i class="fa-solid fa-wind" aria-disabled></i><dl class="info-list"><dt>풍속</dt><dd class="wind-speed">22 <span class="unit">m/s</span></dd><dt>풍향</dt><dd class="wind-direction">N-NE</dd></dl></article></section></main><div class="wave-wrapper info"><svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(62, 203, 212,0.5)"/><use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(62, 203, 212,0.3)"/><use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(62, 203, 212,0.1)"/><use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(62, 203, 212)"/></g></svg></div></div><script src="https://kit.fontawesome.com/0962038fb3.js" crossorigin="anonymous"></script><script type="module" src="./js/api.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet" />
+    <title>오늘의 바다 | 해수욕장 날씨 예보</title>
+    <script defer="defer" src="main.app.js"></script>
+  </head>
+  <body>
+    <div class="loading before-load">
+      <svg class="loading-circle" viewbox="0 0 54 54"><circle cx="50%" cy="50%" r="25"></circle></svg>
+    </div>
+    <div class="container">
+      <header class="gnb">
+        <button class="btn-menu" type="button">
+          <a href="./index.html"><i class="fa-solid fa-chevron-left ic-chevron" aria-label="뒤로가기"></i></a>
+        </button>
+      </header>
+      <main class="main">
+        <div class="beach-info-top">
+          <i class="fa-solid fa-umbrella-beach ic-beach" aria-disabled></i>
+          <h1 class="title beach-name"></h1>
+          <p class="base-time"></p>
+          <div class="weather-wrapper">
+            <div class="weather-img"><img src="./assets/images/clear.png" alt="맑음" /></div>
+            <h3 class="current-temp">33°</h3>
+          </div>
+        </div>
+        <section class="info-area">
+          <article class="beach-info-wrapper">
+            <h1 class="visually-hidden">온도 습도 정보</h1>
+            <i class="fa-solid fa-person-swimming"></i>
+            <dl class="info-list">
+              <dt>수온</dt>
+              <dd class="water-temp">22°</dd>
+              <dt>습도</dt>
+              <dd class="humidty">30%</dd>
+            </dl>
+          </article>
+          <article class="beach-info-wrapper">
+            <h1 class="visually-hidden">일몰 일출 정보</h1>
+            <i class="fa-solid fa-sun"></i>
+            <dl class="info-list">
+              <dt>일출</dt>
+              <dd class="sunrise">05:10</dd>
+              <dt>일몰</dt>
+              <dd class="sunset">20:00</dd>
+            </dl>
+          </article>
+          <article class="beach-info-wrapper">
+            <h1 class="visually-hidden">파도 바람 정보</h1>
+            <i class="fa-solid fa-water" aria-disabled></i>
+            <dl class="info-list">
+              <dt>간조</dt>
+              <dd class="ebb-tide">02:00</dd>
+              <dt>만조</dt>
+              <dd class="flood-tide">07:00</dd>
+              <dt>파도</dt>
+              <dd class="wave">4</dd>
+            </dl>
+          </article>
+          <article class="beach-info-wrapper">
+            <i class="fa-solid fa-wind" aria-disabled></i>
+            <dl class="info-list">
+              <dt>풍속</dt>
+              <dd class="wind-speed">22 <span class="unit">m/s</span></dd>
+              <dt>풍향</dt>
+              <dd class="wind-direction">N-NE</dd>
+            </dl>
+          </article>
+        </section>
+      </main>
+      <div class="wave-wrapper info">
+        <svg
+          class="waves"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28"
+          preserveAspectRatio="none"
+          shape-rendering="auto"
+        >
+          <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(62, 203, 212,0.5)" />
+            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(62, 203, 212,0.3)" />
+            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(62, 203, 212,0.1)" />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(62, 203, 212)" />
+          </g>
+        </svg>
+      </div>
+    </div>
+    <script src="https://kit.fontawesome.com/0962038fb3.js" crossorigin="anonymous"></script>
+  </body>
+</html>

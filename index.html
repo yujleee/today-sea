@@ -3,18 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/tomorrow-house/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/tomorrow-house/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/tomorrow-house/favicon-16x16.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="favicon/android-chrome-512x512.png" />
-    <link rel="manifest" href="favicon/tomorrow-house/site.webmanifest" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <title>오늘의 바다</title>
+    <script defer="defer" src="main.app.js"></script>
   </head>
   <body>
     <div class="container">
@@ -60,7 +61,6 @@
                     S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"
             />
           </svg>
-
           <svg
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,6 @@
                     S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"
             />
           </svg>
-
           <svg
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +101,6 @@
                     S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"
             />
           </svg>
-
           <svg
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
@@ -125,16 +123,14 @@
           </svg>
         </div>
       </div>
-
       <main class="main">
         <div class="title-wrapper">
           <h1 class="title">오늘의 바다</h1>
           <p class="desc-text">해수욕장을 검색해 일기 예보를 확인해보세요.</p>
         </div>
         <div class="search-wrapper">
-          <form action="./info.html" role="search" method="get">
+          <form action="./info.html" role="search">
             <input
-              type="text"
               class="input-search"
               title="검색어 입력"
               name="beachName"
@@ -146,9 +142,7 @@
               <i class="fa-solid fa-magnifying-glass ic-search" aria-label="검색하기"></i>
             </button>
           </form>
-          <div class="search-result">
-            <ul class="result-list"></ul>
-          </div>
+          <div class="search-result"><ul class="result-list"></ul></div>
         </div>
       </main>
       <div class="wave-wrapper">
@@ -174,6 +168,5 @@
       </div>
     </div>
     <script src="https://kit.fontawesome.com/0962038fb3.js" crossorigin="anonymous"></script>
-    <script type="module" src="./js/search.js"></script>
   </body>
 </html>

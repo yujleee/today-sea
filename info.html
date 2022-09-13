@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
@@ -16,19 +16,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <title>오늘의 바다 | 해수욕장 날씨 예보</title>
+    <script defer="defer" src="info.app.js"></script>
   </head>
   <body>
     <div class="loading before-load">
-      <svg class="loading-circle" viewbox="0 0 54 54">
-        <circle cx="50%" cy="50%" r="25"></circle>
-      </svg>
+      <svg class="loading-circle" viewbox="0 0 54 54"><circle cx="50%" cy="50%" r="25"></circle></svg>
     </div>
     <div class="container">
       <header class="gnb">
         <button class="btn-menu" type="button">
-          <a href="./index.html">
-            <i class="fa-solid fa-chevron-left ic-chevron" aria-label="뒤로가기"></i>
-          </a>
+          <a href="./index.html"><i class="fa-solid fa-chevron-left ic-chevron" aria-label="뒤로가기"></i></a>
         </button>
       </header>
       <main class="main">
@@ -37,9 +34,7 @@
           <h1 class="title beach-name"></h1>
           <p class="base-time"></p>
           <div class="weather-wrapper">
-            <div class="weather-img">
-              <img src="./assets/images/clear.png" alt="맑음" />
-            </div>
+            <div class="weather-img"><img src="./assets/images/clear.png" alt="맑음" /></div>
             <h3 class="current-temp">33°</h3>
           </div>
         </div>
@@ -108,8 +103,6 @@
         </svg>
       </div>
     </div>
-
     <script src="https://kit.fontawesome.com/0962038fb3.js" crossorigin="anonymous"></script>
-    <script type="module" src="./js/api.js"></script>
   </body>
 </html>

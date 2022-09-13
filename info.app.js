@@ -261,13 +261,13 @@
         return JSON.parse(localStorage.getItem(e));
       };
       const g = [
-        { img_id: 1, name: 'clear', img: 'assets/images/clear.png' },
-        { img_id: 4, name: 'cloud', img: 'assets/images/cloud.png' },
-        { img_id: 3, name: 'fewCloud', img: 'assets/images/few-cloud.png' },
-        { img_id: 2, name: 'rain', img: 'assets/images/rain.png' },
-        { img_id: 6, name: 'lightRain', img: 'assets/images/light-Rain.png' },
-        { img_id: 8, name: 'snow', img: 'assets/images/snow.png' },
-        { img_id: 5, name: 'night', img: 'assets/images/night.png' },
+        { img_id: 1, name: 'clear', img: './assets/images/clear.png' },
+        { img_id: 4, name: 'cloud', img: './assets/images/cloud.png' },
+        { img_id: 3, name: 'fewCloud', img: './assets/images/few-cloud.png' },
+        { img_id: 2, name: 'rain', img: './assets/images/rain.png' },
+        { img_id: 6, name: 'lightRain', img: './assets/images/light-Rain.png' },
+        { img_id: 8, name: 'snow', img: './assets/images/snow.png' },
+        { img_id: 5, name: 'night', img: './assets/images/night.png' },
       ];
       const b = Number(h('currentTime').time);
       function y(e, t) {
@@ -684,8 +684,9 @@
                 this.tryEntries.forEach(k),
                 !e)
               ) {
-                for (const t in this)
+                for (const t in this) {
                   t.charAt(0) === 't' && n.call(this, t) && !isNaN(+t.slice(1)) && (this[t] = void 0);
+                }
               }
             },
             stop() {

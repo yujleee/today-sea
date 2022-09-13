@@ -418,8 +418,9 @@
             (this.arg = void 0),
             this.tryEntries.forEach(E),
             !t)
-          )
+          ) {
             for (const e in this) e.charAt(0) === 't' && r.call(this, e) && !isNaN(+e.slice(1)) && (this[e] = void 0);
+          }
         },
         stop() {
           this.done = !0;
@@ -559,7 +560,7 @@
                       document.querySelector('.loading').classList.remove('before-load'), s(t);
                     })
                     .catch((t) => {
-                      console.error(t), window.location.replace('./error.html');
+                      console.error(t);
                     })
                 );
               case 2:
@@ -578,7 +579,7 @@
     const t = w(
       v().mark(function t() {
         return v().wrap((t) => {
-          for (;;)
+          for (;;) {
             switch ((t.prev = t.next)) {
               case 0:
                 return (
@@ -593,13 +594,14 @@
                     .then((t) => t.json())
                     .then((t) => l(t))
                     .catch((t) => {
-                      console.error(t), window.location.replace('./error.html');
+                      console.error(t);
                     })
                 );
               case 2:
               case 'end':
                 return t.stop();
             }
+          }
         }, t);
       })
     );
@@ -611,7 +613,7 @@
     const t = w(
       v().mark(function t() {
         return v().wrap((t) => {
-          for (;;)
+          for (;;) {
             switch ((t.prev = t.next)) {
               case 0:
                 return (
@@ -631,13 +633,14 @@
                         });
                     })
                     .catch((t) => {
-                      console.error(t), window.location.replace('./error.html');
+                      console.error(t);
                     })
                 );
               case 2:
               case 'end':
                 return t.stop();
             }
+          }
         }, t);
       })
     );
@@ -649,7 +652,7 @@
     const t = w(
       v().mark(function t() {
         return v().wrap((t) => {
-          for (;;)
+          for (;;) {
             switch ((t.prev = t.next)) {
               case 0:
                 E(), L(), _();
@@ -657,6 +660,7 @@
               case 'end':
                 return t.stop();
             }
+          }
         }, t);
       })
     );

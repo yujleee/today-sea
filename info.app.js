@@ -684,8 +684,9 @@
                 this.tryEntries.forEach(k),
                 !e)
               ) {
-                for (const t in this)
+                for (const t in this) {
                   t.charAt(0) === 't' && n.call(this, t) && !isNaN(+t.slice(1)) && (this[t] = void 0);
+                }
               }
             },
             stop() {
@@ -863,8 +864,7 @@
                         .then((e) => e.json())
                         .then((e) => E(e))
                         .catch((e) => {
-                          console.error(e),
-                          //   window.location.replace('./error.html');
+                          console.error(e), window.location.replace('./error.html');
                         })
                     );
                   case 2:

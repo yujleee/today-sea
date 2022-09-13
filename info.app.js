@@ -37,11 +37,12 @@
           (t.i = function (e, n, r, o, i) {
             typeof e === 'string' && (e = [[null, e, void 0]]);
             const a = {};
-            if (r)
+            if (r) {
               for (let c = 0; c < this.length; c++) {
                 const s = this[c][0];
                 s != null && (a[s] = !0);
               }
+            }
             for (let l = 0; l < e.length; l++) {
               const u = [].concat(e[l]);
               (r && a[u[0]]) ||
@@ -69,11 +70,12 @@
     379: (e) => {
       const t = [];
       function n(e) {
-        for (var n = -1, r = 0; r < t.length; r++)
+        for (var n = -1, r = 0; r < t.length; r++) {
           if (t[r].identifier === e) {
             n = r;
             break;
           }
+        }
         return n;
       }
       function r(e, r) {
@@ -112,8 +114,9 @@
                 t.sourceMap === e.sourceMap &&
                 t.supports === e.supports &&
                 t.layer === e.layer
-              )
+              ) {
                 return;
+              }
               n.update((e = t));
             } else n.remove();
           }
@@ -141,20 +144,22 @@
         const r = (function (e) {
           if (void 0 === t[e]) {
             let n = document.querySelector(e);
-            if (window.HTMLIFrameElement && n instanceof window.HTMLIFrameElement)
+            if (window.HTMLIFrameElement && n instanceof window.HTMLIFrameElement) {
               try {
                 n = n.contentDocument.head;
               } catch (e) {
                 n = null;
               }
+            }
             t[e] = n;
           }
           return t[e];
         })(e);
-        if (!r)
+        if (!r) {
           throw new Error(
             "Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid."
           );
+        }
         r.appendChild(n);
       };
     },
@@ -560,8 +565,9 @@
           const n = e.iterator[t.method];
           if (void 0 === n) {
             if (((t.delegate = null), t.method === 'throw')) {
-              if (e.iterator.return && ((t.method = 'return'), (t.arg = void 0), w(e, t), t.method === 'throw'))
+              if (e.iterator.return && ((t.method = 'return'), (t.arg = void 0), w(e, t), t.method === 'throw')) {
                 return u;
+              }
               (t.method = 'throw'), (t.arg = new TypeError("The iterator does not provide a 'throw' method"));
             }
             return u;
@@ -677,9 +683,10 @@
                 (this.arg = void 0),
                 this.tryEntries.forEach(k),
                 !e)
-              )
+              ) {
                 for (const t in this)
                   t.charAt(0) === 't' && n.call(this, t) && !isNaN(+t.slice(1)) && (this[t] = void 0);
+              }
             },
             stop() {
               this.done = !0;
@@ -821,7 +828,8 @@
                           document.querySelector('.loading').classList.remove('before-load'), S(e);
                         })
                         .catch((e) => {
-                          console.error(e), window.location.replace('./error.html');
+                          console.error(e);
+                          //   window.location.replace('./error.html');
                         })
                     );
                   case 2:
@@ -840,7 +848,7 @@
         const e = A(
           q().mark(function e() {
             return q().wrap((e) => {
-              for (;;)
+              for (;;) {
                 switch ((e.prev = e.next)) {
                   case 0:
                     return (
@@ -855,13 +863,15 @@
                         .then((e) => e.json())
                         .then((e) => E(e))
                         .catch((e) => {
-                          console.error(e), window.location.replace('./error.html');
+                          console.error(e),
+                          //   window.location.replace('./error.html');
                         })
                     );
                   case 2:
                   case 'end':
                     return e.stop();
                 }
+              }
             }, e);
           })
         );
@@ -873,7 +883,7 @@
         const e = A(
           q().mark(function e() {
             return q().wrap((e) => {
-              for (;;)
+              for (;;) {
                 switch ((e.prev = e.next)) {
                   case 0:
                     return (
@@ -893,13 +903,15 @@
                             });
                         })
                         .catch((e) => {
-                          console.error(e), window.location.replace('./error.html');
+                          console.error(e);
+                          //   window.location.replace('./error.html');
                         })
                     );
                   case 2:
                   case 'end':
                     return e.stop();
                 }
+              }
             }, e);
           })
         );
@@ -911,7 +923,7 @@
         const e = A(
           q().mark(function e() {
             return q().wrap((e) => {
-              for (;;)
+              for (;;) {
                 switch ((e.prev = e.next)) {
                   case 0:
                     R(), G(), J();
@@ -919,6 +931,7 @@
                   case 'end':
                     return e.stop();
                 }
+              }
             }, e);
           })
         );
@@ -926,8 +939,8 @@
           return e.apply(this, arguments);
         };
       })();
-      window.addEventListener('load', () => {
+      window.onload = function () {
         K(), console.log('app running');
-      });
+      };
     })();
 })();

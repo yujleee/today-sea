@@ -692,7 +692,7 @@
           });
         };
       }
-      new (function () {
+      function k() {
         const t = this;
         const e = [2, 5, 8, 11, 14, 17, 20, 23];
         const r = document.querySelector('.input-search');
@@ -826,6 +826,9 @@
           o.addEventListener('click', (t) => {
             p(t);
           });
-      })();
+      }
+      window.onload = function () {
+        new k();
+      };
     })();
 })();

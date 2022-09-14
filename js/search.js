@@ -69,7 +69,7 @@ function Search() {
   };
 
   const submitBeach = (e) => {
-    const beachName = searchInput.value.length === 1 ? e.target.innerText : searchInput.value;
+    const beachName = e.target.innerText;
     let beachNumber = 1;
     for (const [idx, beach] of Object.entries(beachInfo)) {
       if (beach.name === beachName) {

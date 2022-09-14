@@ -2,6 +2,7 @@
 import { store } from './store/store.js';
 
 function Search() {
+  const BASE_TIME = [2, 5, 8, 11, 14, 17, 20, 23];
   const searchInput = document.querySelector('.input-search');
   const searchForm = searchInput.parentNode;
   const resultList = document.querySelector('.result-list');
@@ -10,6 +11,33 @@ function Search() {
   const beachNames = [];
   this.searchCount = -1;
   this.searchMaxCount = 0;
+
+  const now = {};
+
+  const savePayload = (a, b) => {
+    const payload = {
+      date: a,
+      time: b,
+    };
+
+    return payload;
+  };
+
+  const getBaseTime = (currentTime) => {
+    const index = BASE_TIME.findIndex((it) => currentTime <= it);
+    const baseTime = BASE_TIME[index - 1];
+    return baseTime < 10 ? `0${baseTime}00` : `${baseTime}00`;
+  };
+
+  const getCurrentTime = async () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.toLocaleString('ko-KO', { month: '2-digit' }).slice(0, 2);
+    const date = today.toLocaleString('ko-KO', { day: '2-digit' }).slice(0, 2);
+    now.date = `${year}${month}${date}`;
+    now.time = getBaseTime(today.getHours());
+    return now;
+  };
 
   const fetchData = async () => {
     await fetch('../assets/beachData.json')
@@ -56,7 +84,10 @@ function Search() {
       name: beachName,
     };
 
+    getCurrentTime();
+
     store.setLocalStorage('beachInfo', payload);
+    store.setLocalStorage('currentTime', savePayload(now.date, now.time));
     searchForm.submit();
   };
 
@@ -109,4 +140,6 @@ function Search() {
   });
 }
 
-const search = new Search();
+window.onload = () => {
+  const search = new Search();
+};

@@ -1,40 +1,44 @@
 const path = require('path');
-
-const HtmlWebpack = require('html-webpack-plugin');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'none',
-  entry: './js/index.js',
+  entry: { main: './js/index.js', info: './js/infoRender.js' },
   output: {
-    filename: 'app.bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    filename: '[name].app.js',
   },
   plugins: [
-    new HtmlWebpack({
-      template: './index.html', // index.html을 기본 템플릿으로 반영할 수 있도록 설정
+    new HTMLWebpackPlugin({
+      template: path.resolve('./index.html'),
+      filename: 'index.html',
+      chunks: ['main'],
+    }),
+    new HTMLWebpackPlugin({
+      template: path.resolve('./info.html'),
+      filename: 'info.html',
+      chunks: ['info'],
+    }),
+    new HTMLWebpackPlugin({
+      template: path.resolve('./error.html'),
+      filename: 'error.html',
+      chunks: ['info'],
     }),
   ],
   module: {
     rules: [
+      //   {
+      //     test: /\.css$/,
+      //     use: ['style-loader', 'css-loader'],
+      //   },
+      //   {
+      //     test: /\.scss$/,
+      //     use: ['style-loader', 'css-loader', 'sass-loader'],
+      //   },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'post-css-loader'],
-      },
-      {
-        test: /\.png$/,
-        loader: 'file-loader',
-        options: {
-          publicPath: './dist/',
-          name: '[name].[ext]?[hash]',
-        },
-      },
-      {
-        test: /\.json$/,
-        loader: 'file-loader',
-        options: {
-          publicPath: './dist/',
-          name: '[name].[ext]?[hash]',
-        },
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
       },
     ],
   },

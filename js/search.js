@@ -145,12 +145,15 @@ function Search() {
     });
   };
 
-  searchInput.addEventListener('input', (e) => {
-    resultList.parentNode.classList.remove('is-active');
-    if (e.target.value.length !== 0) {
-      handleSearch();
-    }
-  });
+  searchInput.addEventListener(
+    'input',
+    _.debounce((e) => {
+      resultList.parentNode.classList.remove('is-active');
+      if (e.target.value.length !== 0) {
+        handleSearch();
+      }
+    }, 300)
+  );
 
   searchInput.addEventListener('keyup', (e) => {
     if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {

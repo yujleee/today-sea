@@ -18,7 +18,8 @@
       margin-bottom: 0.7rem;
     }
 
-    &-text {
+    &-text,
+    &-desc {
       @include text-style(16);
       margin-bottom: 4rem;
     }

@@ -35,6 +35,21 @@
     }
   }
 
+  .error-text {
+    @include text-style(14);
+    display: none;
+    padding-left: 1.6rem;
+    margin-bottom: 4rem;
+    color: $color-red;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+
+    &.is-active {
+      display: block;
+      opacity: 1;
+    }
+  }
+
   .search-result {
     position: absolute;
     top: 50px;

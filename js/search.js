@@ -1,5 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 import { store } from './store/store.js';
+import { moveToErrorPage } from './handleError.js';
 
 function Search() {
   const BASE_TIME = [2, 5, 8, 11, 14, 17, 20, 23];
@@ -42,19 +43,22 @@ function Search() {
   };
 
   const fetchData = async () => {
-    await fetch('../assets/beachData.json')
-      .then((response) => response.json())
-      .then((data) => {
-        beachInfo = Object.values(data);
-        return beachInfo;
-      })
-      .then((data) => {
-        for (const [idx, beach] of Object.entries(data)) {
-          beachNames[idx] = beach.name;
-        }
-        return beachNames;
-      })
-      .catch((err) => console.error(err));
+    try {
+      const response = await fetch('../assets/beachData.json');
+
+      if (!response.ok) {
+        throw new Error('JSON 데이터를 받아오지 못했습니다.');
+      }
+
+      const data = await response.json();
+      beachInfo = Object.values(data);
+
+      for (const [idx, beach] of Object.entries(beachInfo)) {
+        beachNames[idx] = beach.name;
+      }
+    } catch (error) {
+      moveToErrorPage();
+    }
   };
 
   fetchData();

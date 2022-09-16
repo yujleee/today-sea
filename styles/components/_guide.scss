@@ -1,0 +1,70 @@
+.guide-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  display: none;
+  padding: 3rem 4rem 2rem;
+  background-color: $color-white;
+  transform: translate3d(100%, 0, 0);
+  transition: transform 500ms ease-in-out;
+
+  &.is-active {
+    display: block;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .guide {
+    &-header {
+      @include flexbox(between, start);
+
+      .btn-close {
+        width: 32px;
+        height: 32px;
+        padding-bottom: 0.4rem;
+
+        .ic-close {
+          font-size: 3rem;
+          color: $color-gray-400;
+        }
+      }
+    }
+
+    &-title {
+      @include text-style(18);
+      margin-bottom: 4rem;
+      font-size: 24px;
+      color: $color-gray-700;
+    }
+
+    &-text-list {
+      @include text-style(18);
+      padding: 0 1.8rem 0 0.6rem;
+      color: $color-gray-500;
+    }
+
+    &-text-item {
+      margin-bottom: 1.6rem;
+      line-height: 1.7;
+      word-break: keep-all;
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 990;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+
+  &.is-active {
+    display: block;
+    opacity: 1;
+  }
+}

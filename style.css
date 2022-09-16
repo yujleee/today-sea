@@ -620,8 +620,7 @@ svg {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 0 1rem;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1rem;
   overflow-x: hidden;
 }
 .gnb .btn-menu {
@@ -631,6 +630,12 @@ svg {
 .gnb .btn-menu .ic-chevron {
   font-size: 2.6rem;
   color: rgb(119, 119, 119);
+}
+@media screen and (min-width: 720px) {
+  .gnb {
+    padding: 0 1rem;
+    margin: 0 auto 2rem;
+  }
 }
 
 .search-wrapper {
@@ -664,6 +669,21 @@ svg {
 .search-wrapper .search-btn .ic-search {
   font-size: 2.6rem;
   color: rgb(62, 122, 212);
+}
+.search-wrapper .error-text {
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  letter-spacing: -0.02em;
+  display: none;
+  padding-left: 1.6rem;
+  margin-bottom: 4rem;
+  color: rgb(240, 86, 68);
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+.search-wrapper .error-text.is-active {
+  display: block;
+  opacity: 1;
 }
 .search-wrapper .search-result {
   position: absolute;
@@ -793,8 +813,12 @@ svg {
   flex-wrap: wrap;
   justify-content: flex-start;
 }
-.beach-info-wrapper .fa-solid {
+.beach-info-wrapper .ic-wrapper {
+  width: 32px;
+  height: 32px;
   margin-right: 1rem;
+}
+.beach-info-wrapper .fa-solid {
   font-size: 28px;
   color: rgb(204, 204, 204);
   text-align: center;
@@ -802,6 +826,9 @@ svg {
 }
 .beach-info-wrapper .fa-solid.fa-water {
   font-size: 26px;
+}
+.beach-info-wrapper .fa-solid .info-list {
+  flex-grow: 2;
 }
 @media screen and (min-width: 720px) {
   .beach-info-wrapper {

@@ -1,8 +1,7 @@
 .gnb {
   @include flexbox(between);
   width: 100%;
-  padding: 0 1rem;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1rem;
   overflow-x: hidden;
 
   .btn-menu {
@@ -13,5 +12,10 @@
       font-size: 2.6rem;
       color: $color-gray-400;
     }
+  }
+
+  @include responsive(T) {
+    padding: 0 1rem;
+    margin: 0 auto 2rem;
   }
 }

@@ -59,12 +59,22 @@ function Search() {
 
   fetchData();
 
+  const sortDesc = (a, b) => {
+    a = a.toLowerCase();
+    b = b.toLowerCase();
+
+    return a < b ? -1 : a === b ? 0 : 1;
+  };
+
   const handleSearch = () => {
     const word = searchInput.value;
     let beachList = [];
     if (word !== '') {
-      const recommandName = beachNames.filter((name) => name.toLowerCase().startsWith(word));
-      beachList = recommandName.map((item, idx) => `<li data-index=${idx}>${item}</li>`).join('');
+      const filteredBeach = beachNames.filter((name) => name.toLowerCase().startsWith(word));
+      beachList = filteredBeach
+        .sort(sortDesc)
+        .map((item, idx) => `<li data-index=${idx}>${item}</li>`)
+        .join('');
     }
 
     if (beachList.length === 0) {
@@ -83,7 +93,6 @@ function Search() {
     let beachNumber = -1;
 
     for (const [idx, beach] of Object.entries(beachInfo)) {
-      //   beachNumber = beach.name === beachName ? beach['beach-num'] : -1;
       if (beach.name === beachName) {
         beachNumber = beach['beach-num'];
       }

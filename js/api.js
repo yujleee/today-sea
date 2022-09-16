@@ -85,3 +85,7 @@ const App = () => {
 window.onload = () => {
   App();
 };
+
+window.onbeforeunload = () => {
+  endLoading();
+};

@@ -4,37 +4,37 @@ const weatherImg = [
   {
     img_id: 1,
     name: 'clear',
-    img: '../assets/images/clear.png',
+    img: 'clear.png',
   },
   {
     img_id: 4,
     name: 'cloud',
-    img: '../assets/images/cloud.png',
+    img: 'cloud.png',
   },
   {
     img_id: 3,
     name: 'fewCloud',
-    img: '../assets/images/few-cloud.png',
+    img: 'few-cloud.png',
   },
   {
     img_id: 2,
     name: 'rain',
-    img: '../assets/images/rain.png',
+    img: 'rain.png',
   },
   {
     img_id: 6,
     name: 'lightRain',
-    img: '../assets/images/light-Rain.png',
+    img: 'light-Rain.png',
   },
   {
     img_id: 8,
     name: 'snow',
-    img: '../assets/images/snow.png',
+    img: 'snow.png',
   },
   {
     img_id: 5,
     name: 'night',
-    img: '../assets/images/night.png',
+    img: 'night.png',
   },
 ];
 
@@ -45,17 +45,17 @@ export const selectImg = (sky, pty) => {
 
   if (currentTime >= 2000) {
     const imgList = weatherImg.find((it) => it.name === 'night');
-    return imgList.img;
+    return `../assets/images/${imgList.img}`;
   }
 
   if (Number(pty) === 0) {
     const imgList = weatherImg.find((it) => it.img_id === Number(sky));
-    src = imgList.img;
+    src = `../assets/images/${imgList.img}`;
   }
 
   if (Number(pty) >= 1) {
     const imgList = weatherImg.find((it) => it.img_id === Number(pty) + 1);
-    src = imgList.img;
+    src = `../assets/images/${imgList.img}`;
   }
   return src;
 };

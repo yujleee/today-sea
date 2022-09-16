@@ -4,7 +4,7 @@
   display: grid;
   padding: 1rem 0;
   text-align: left;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 40px 100px 40px 100px;
 
   dt,
   dd {
@@ -13,8 +13,7 @@
   }
 
   dt {
-    @include flexbox;
-    margin: 0 1rem;
+    text-align: left;
     font-weight: 400;
     color: $color-gray-400;
   }

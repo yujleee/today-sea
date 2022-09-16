@@ -7,7 +7,7 @@
   .ic-wrapper {
     width: 32px;
     height: 32px;
-    margin-right: 1rem;
+    margin-right: 1.6rem;
   }
 
   .fa-solid {
@@ -38,5 +38,10 @@
         color: $color-blue;
       }
     }
+  }
+
+  @include responsive(D) {
+    width: 200px;
+    margin: 0 1rem;
   }
 }

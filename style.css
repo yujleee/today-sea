@@ -316,6 +316,9 @@ template {
   font-family: "Noto Sans KR", sans-serif;
   margin: 0;
 }
+*:focus {
+  outline: 0;
+}
 
 html {
   font-family: "Noto Sans KR", sans-serif;
@@ -623,13 +626,24 @@ svg {
   margin: 0 auto 1rem;
   overflow-x: hidden;
 }
-.gnb .btn-menu {
+.gnb button {
   padding: 1rem 0;
   cursor: pointer;
 }
-.gnb .btn-menu .ic-chevron {
+.gnb .btn-menu a {
+  padding: 1rem;
+}
+.gnb .btn-menu:hover .fa-solid,
+.gnb .btn-guide:hover .fa-solid {
+  color: rgb(62, 122, 212);
+}
+.gnb .ic-chevron,
+.gnb .ic-guide {
   font-size: 2.6rem;
   color: rgb(119, 119, 119);
+}
+.gnb .ic-guide {
+  padding: 0.5rem;
 }
 @media screen and (min-width: 720px) {
   .gnb {
@@ -727,6 +741,7 @@ svg {
 }
 @media screen and (min-width: 1200px) {
   .info-area {
+    justify-content: center;
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -816,7 +831,7 @@ svg {
 .beach-info-wrapper .ic-wrapper {
   width: 32px;
   height: 32px;
-  margin-right: 1rem;
+  margin-right: 0.8rem;
 }
 .beach-info-wrapper .fa-solid {
   font-size: 28px;
@@ -842,6 +857,12 @@ svg {
     color: rgb(62, 122, 212);
   }
 }
+@media screen and (min-width: 1200px) {
+  .beach-info-wrapper {
+    width: 200px;
+    margin: 0 1rem;
+  }
+}
 
 .info-list {
   font-size: 1.8rem;
@@ -851,7 +872,7 @@ svg {
   display: grid;
   padding: 1rem 0;
   text-align: left;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 40px 80px 40px 70px;
 }
 .info-list dt,
 .info-list dd {
@@ -859,10 +880,7 @@ svg {
   line-height: 1.7;
 }
 .info-list dt {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin: 0 1rem;
+  text-align: left;
   font-weight: 400;
   color: rgb(119, 119, 119);
 }
@@ -969,6 +987,72 @@ svg {
   100% {
     stroke-dashoffset: -157;
   }
+}
+.guide-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  display: none;
+  padding: 3rem 4rem 2rem;
+  background-color: rgb(255, 255, 255);
+  transform: translate3d(100%, 0, 0);
+  transition: transform 500ms ease-in-out;
+}
+.guide-wrapper.is-active {
+  display: block;
+  transform: translate3d(0, 0, 0);
+}
+.guide-wrapper .guide-header {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+}
+.guide-wrapper .guide-header .btn-close {
+  width: 32px;
+  height: 32px;
+  padding-bottom: 0.4rem;
+}
+.guide-wrapper .guide-header .btn-close .ic-close {
+  font-size: 3rem;
+  color: rgb(119, 119, 119);
+}
+.guide-wrapper .guide-title {
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 4rem;
+  font-size: 24px;
+  color: rgb(35, 35, 35);
+}
+.guide-wrapper .guide-text-list {
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  letter-spacing: -0.02em;
+  padding: 0 1.8rem 0 0.6rem;
+  color: rgb(85, 85, 85);
+}
+.guide-wrapper .guide-text-item {
+  margin-bottom: 1.6rem;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 990;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+.overlay.is-active {
+  display: block;
+  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

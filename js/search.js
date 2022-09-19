@@ -71,6 +71,7 @@ function Search() {
   };
 
   const handleSearch = () => {
+    this.searchCount = -1;
     const word = searchInput.value;
     let beachList = [];
     if (word !== '') {
@@ -130,7 +131,7 @@ function Search() {
   const handleSearchResult = (e) => {
     if (this.searchCount >= this.searchMaxCount) {
       this.searchCount = -1;
-    } else if (this.searchCount > this.searchMaxCount || this.searchCount < 0) {
+    } else if (this.searchCount > this.searchMaxCount || this.searchCount < -1) {
       this.searchCount = this.searchMaxCount;
     }
 
@@ -139,7 +140,6 @@ function Search() {
     switch (e.key) {
       case 'ArrowUp':
         this.searchCount -= 1;
-
         break;
       case 'ArrowDown':
         this.searchCount += 1;

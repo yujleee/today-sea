@@ -59,18 +59,35 @@
 
 <br/>
 
-## 기능 시연
+## 👀 기능 시연
 
 추가 예정
 
 <br/>
 
-## 상세 기능
+## 📍 상세 기능
 
-추가 예정
+위키 페이지에서 상세 기능을 살펴볼 수 있습니다.
+
+https://github.com/yujleee/today-sea/wiki
 
 <br/>
 
-## 트러블 슈팅 및 기록
+## 👾 트러블 슈팅 및 기록
 
-추가 예정
+#### 🗂 등록된 이슈
+
+https://github.com/yujleee/today-sea/issues/1#issue-1370995281
+
+#### ✨ 해결 과정
+
+- 에러 수정 삽질 기록 (1)
+
+  - https://i-ten.tistory.com/185
+
+- 에러 수정 삽질 기록 (2)
+
+  - https://i-ten.tistory.com/186
+
+- 에러 수정 삽질 기록 (3)
+  - https://i-ten.tistory.com/187

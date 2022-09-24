@@ -3,7 +3,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'none',
-  entry: { main: './js/index.js', info: './js/infoRender.js' },
+  entry: { main: './js/build/index.js', info: './js/build/infoRender.js' },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].app.js',
@@ -27,14 +27,6 @@ module.exports = {
   ],
   module: {
     rules: [
-      //   {
-      //     test: /\.css$/,
-      //     use: ['style-loader', 'css-loader'],
-      //   },
-      //   {
-      //     test: /\.scss$/,
-      //     use: ['style-loader', 'css-loader', 'sass-loader'],
-      //   },
       {
         test: /\.js$/,
         exclude: /node_modules/,

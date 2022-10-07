@@ -6,7 +6,7 @@
 
 아래 링크를 통해 확인해보실 수 있습니다.
 
-🔗 https://github.com/yujleee/today-sea
+🔗 https://yujleee.github.io/today-sea/
 
 ### 설명
 
